@@ -1,0 +1,21 @@
+{
+    "name": "note-ui-config",
+    "version": "1.0.0",
+    "description": "> **Note: this package is considered experimental and can change at any time without notice. Updates are not covered by semver until 1.0**",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "lint": "eslint '**/*.{js,ts,tsx}' --quiet --fix"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "@nick-mazuk/eslint-config": "^0.1.11",
+        "@nick-mazuk/tsconfig": "^0.1.0",
+        "eslint": "^7.10.0"
+    },
+    "dependencies": {
+        "typescript": "^4.0.3"
+    }
+}
