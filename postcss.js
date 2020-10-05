@@ -13,7 +13,6 @@ const fn = (vars = {}) => {
             const decls = []
             for (const color in flattenedColors) {
                 if (typeof flattenedColors[color] === 'string') continue;
-                console.log(color, flattenedColors[color])
                 decls.push(postcss.decl({
                     prop: '--c-' + color,
                     value: flattenedColors[color].join(', ')
