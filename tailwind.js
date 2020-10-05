@@ -1,8 +1,33 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
+const isColor = (color) => {
+    return Array.isArray(color) || typeof color === 'string'
+}
+const getTailwindColor = (color) => {
+    if (typeof color === 'string') return color
+    const colorString = color.join(', ')
+    return ({ opacityVariable, opacityValue }) => {
+        if (typeof opacityValue !== 'undefined') return `rgba(${colorString}, ${opacityValue})`
+        if (typeof opacityVariable !== 'undefined')
+            return `rgba(${colorString}, var(${opacityVariable}, 1))`
+        return `rgb(${colorString})`
+    }
+}
+const createTailwindColors = (colors) => {
+    const tailwindColors = {}
+    for (const colorGroup in colors) {
+        if (Object.prototype.hasOwnProperty.call(colors, colorGroup)) {
+            const item = colors[colorGroup]
+            if (isColor(item)) tailwindColors[colorGroup] = getTailwindColor(item)
+            else tailwindColors[colorGroup] = createTailwindColors(item)
+        }
+    }
+    return tailwindColors
+}
+
 module.exports = {
     theme: {
-        colors: require('./colors'),
+        colors: createTailwindColors(require('./colors')),
         inset: (theme, { negative }) => ({
             auto: 'auto',
             '1/2': '50%',
