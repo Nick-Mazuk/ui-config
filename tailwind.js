@@ -201,6 +201,7 @@ module.exports = {
                 css: {
                     fontSize: theme('fontSize.lg.0'),
                     h1: {
+                        fontSize: theme('fontSize.6xl.0'),
                     },
                     h2: {
                         fontSize: theme('fontSize.5xl.0'),
