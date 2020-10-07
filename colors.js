@@ -1,8 +1,6 @@
 const colors = {
     black: [0, 0, 0],
     white: [255, 255, 255],
-    transparent: 'transparent',
-    current: 'currentColor',
     primary: {
         default: [13, 100, 226],
         d: [0, 124, 255],

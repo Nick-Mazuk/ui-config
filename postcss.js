@@ -18,6 +18,10 @@ const fn = (vars = {}) => {
                     value: flattenedColors[color].join(', ')
                 }))
             }
+            decls.push(postcss.decl({
+                prop: '--c-link',
+                value: 'var(--c-primary-default)'
+            }))
             css.prepend(rule.append(decls))
         }
     }

@@ -1,11 +1,10 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 const isColor = (color) => {
-    return Array.isArray(color) || typeof color === 'string'
+    return Array.isArray(color)
 }
-const getTailwindColor = (color) => {
-    if (typeof color === 'string') return color
-    const colorString = color.join(', ')
+const getTailwindColor = (color, isArray = true) => {
+    const colorString = isArray ? color.join(', ') : color
     return ({ opacityVariable, opacityValue }) => {
         if (typeof opacityValue !== 'undefined') return `rgba(${colorString}, ${opacityValue})`
         if (typeof opacityVariable !== 'undefined')
@@ -25,9 +24,22 @@ const createTailwindColors = (colors) => {
     return tailwindColors
 }
 
+const round = (num) =>
+    num
+        .toFixed(7)
+        .replace(/(\.[0-9]+?)0+$/, '$1')
+        .replace(/\.0$/, '')
+const rem = (px) => `${round(px / 16)}rem`
+const em = (px, base) => `${round(px / base)}em`
+
 module.exports = {
     theme: {
-        colors: createTailwindColors(require('./colors')),
+        colors: {
+            ...createTailwindColors(require('./colors')),
+            transparent: 'transparent',
+            current: 'currentColor',
+            link: getTailwindColor('var(--c-link)', false)
+        },
         inset: (theme, { negative }) => ({
             auto: 'auto',
             '1/2': '50%',
@@ -91,6 +103,135 @@ module.exports = {
             'input-error-outline': 'inset 0 0 0 2px rgba(var(--c-error), 1)',
             none: 'none',
         },
+        typography: (theme) => ({
+            default: {
+                css: {
+                    color: theme('colors.gray.900'),
+                    a: {
+                        color: theme('colors.link'),
+                        fontWeight: theme('fontWeight.semibold'),
+                        textDecoration: 'none'
+                    },
+                    h1: {
+                        fontWeight: theme('fontWeight.medium'),
+                        fontSize: theme('fontSize.4xl.0'),
+                    },
+                    h2: {
+                        fontWeight: theme('fontWeight.medium'),
+                        fontSize: theme('fontSize.3xl.0'),
+                    },
+                    h3: {
+                        fontWeight: theme('fontWeight.semibold'),
+                        fontSize: theme('fontSize.2xl.0'),
+                    },
+                    h4: {
+                        fontWeight: theme('fontWeight.semibold'),
+                        fontSize: theme('fontSize.xl.0'),
+                    },
+                    h5: {
+                        fontWeight: theme('fontWeight.semibold'),
+                        fontSize: theme('fontSize.lg.0'),
+                    },
+                    h6: {
+                        fontWeight: theme('fontWeight.bold'),
+                        fontSize: theme('fontSize.base.0'),
+                    },
+                    iframe: {
+                        borderRadius: theme('borderRadius.lg'),
+                        marginTop: '0 !important',
+                        marginBottom: '0 !important',
+                    },
+                    img: {
+                        borderRadius: theme('borderRadius.lg'),
+                        marginTop: em(32, 16),
+                        marginBottom: em(32, 16),
+                    },
+                    video: {
+                        borderRadius: theme('borderRadius.lg'),
+                        marginTop: em(32, 16),
+                        marginBottom: em(32, 16),
+                    },
+                    figure: {
+                        borderRadius: theme('borderRadius.lg'),
+                        marginTop: em(32, 16),
+                        marginBottom: em(32, 16),
+                    },
+                },
+            },
+            lg: {
+                css: {
+                    h1: {
+                        fontSize: theme('fontSize.5xl.0'),
+                    },
+                    h2: {
+                        fontSize: theme('fontSize.4xl.0'),
+                    },
+                    h3: {
+                        fontSize: theme('fontSize.3xl.0'),
+                    },
+                    h4: {
+                        fontSize: theme('fontSize.2xl.0'),
+                    },
+                    h5: {
+                        fontSize: theme('fontSize.xl.0'),
+                    },
+                    h6: {
+                        fontSize: theme('fontSize.lg.0'),
+                    },
+                    img: {
+                        marginTop: em(32, 18),
+                        marginBottom: em(32, 18),
+                    },
+                    video: {
+                        marginTop: em(32, 18),
+                        marginBottom: em(32, 18),
+                    },
+                    figure: {
+                        marginTop: em(32, 18),
+                        marginBottom: em(32, 18),
+                    },
+                }
+            },
+            xl: {
+                css: {
+                    fontSize: theme('fontSize.lg.0'),
+                    h1: {
+                    },
+                    h2: {
+                        fontSize: theme('fontSize.5xl.0'),
+                    },
+                    h3: {
+                        fontSize: theme('fontSize.4xl.0'),
+                    },
+                    h4: {
+                        fontSize: theme('fontSize.3xl.0'),
+                    },
+                    h5: {
+                        fontSize: theme('fontSize.2xl.0'),
+                    },
+                    h6: {
+                        fontSize: theme('fontSize.xl.0'),
+                    },
+                    img: {
+                        marginTop: em(40, 20),
+                        marginBottom: em(40, 20),
+                    },
+                    video: {
+                        marginTop: em(40, 20),
+                        marginBottom: em(40, 20),
+                    },
+                    figure: {
+                        marginTop: em(40, 20),
+                        marginBottom: em(40, 20),
+                    },
+                }
+            },
+            'text-base': {
+                css: {
+                    fontSize: theme('fontSize.base.0'),
+                }
+            }
+        }),
         extend: {
             fontFamily: {
                 sans: ['Inter', ...defaultTheme.fontFamily.sans],
@@ -165,15 +306,15 @@ module.exports = {
         },
     },
     variants: {
-        boxShadow: ['responsive', 'hover', 'focus', 'focus-within', 'active'],
-        scale: ['responsive', 'hover', 'focus', 'focus-within', 'active'],
-        backgroundOpacity: ['responsive', 'hover', 'focus', 'focus-within', 'active'],
-        backgroundColor: ['responsive', 'hover', 'focus', 'group-hover'],
-        margin: ['responsive', 'focus'],
-        textColor: ['responsive', 'hover', 'focus', 'focus-within'],
-        display: ['responsive', 'group-hover', 'group-focus'],
-        borderWidth: ['responsive', 'first'],
         animation: ['responsive', 'motion-safe', 'motion-reduce'],
+        backgroundColor: ['responsive', 'hover', 'focus', 'group-hover'],
+        backgroundOpacity: ['responsive', 'hover', 'focus', 'focus-within', 'active'],
+        borderWidth: ['responsive', 'first'],
+        boxShadow: ['responsive', 'hover', 'focus', 'focus-within', 'active'],
+        display: ['responsive', 'group-hover', 'group-focus'],
+        margin: ['responsive', 'focus'],
+        scale: ['responsive', 'hover', 'focus', 'focus-within', 'active'],
+        textColor: ['responsive', 'hover', 'focus', 'focus-within'],
     },
     future: {
         removeDeprecatedGapUtilities: true,

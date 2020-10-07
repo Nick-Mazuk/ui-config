@@ -1,5 +1,5 @@
 /* eslint-disable no-magic-numbers -- defining the magic numbers in this file */
-type Color = [number, number, number] | 'transparent' | 'currentColor'
+type Color = [number, number, number]
 type Shade =
     | 50
     | 100
@@ -27,8 +27,6 @@ type ColorGroup = Record<Shade, Color> & LooseColorGroup
 type RequiredColors =
     | 'black'
     | 'white'
-    | 'transparent'
-    | 'current'
     | 'primary'
     | 'highlight'
     | 'success'
@@ -39,7 +37,7 @@ type RequiredColors =
 type Colors = Record<RequiredColors, Color | ColorGroup> & Record<string, Color | LooseColorGroup>
 
 const isColor = (color: Color | ColorGroup | LooseColorGroup): color is Color => {
-    return Array.isArray(color) || typeof color === 'string'
+    return Array.isArray(color)
 }
 
 type TailwindColorFunction = ({
@@ -51,7 +49,6 @@ type TailwindColorFunction = ({
 }) => string
 
 const getTailwindColor = (color: Color): string | TailwindColorFunction => {
-    if (typeof color === 'string') return color
     const colorString = color.join(', ')
     return ({ opacityVariable, opacityValue }) => {
         if (typeof opacityValue !== 'undefined') return `rgba(${colorString}, ${opacityValue})`
@@ -78,8 +75,6 @@ const createTailwindColors = (colors: Colors) => {
 export const colors: Colors = {
     black: [0, 0, 0],
     white: [255, 255, 255],
-    transparent: 'transparent',
-    current: 'currentColor',
     primary: {
         default: [13, 100, 226],
         d: [0, 124, 255],
