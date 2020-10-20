@@ -119,27 +119,27 @@ module.exports = {
                     },
                     h1: {
                         fontWeight: theme('fontWeight.medium'),
-                        fontSize: rem(theme('fontSize.4xl.0')),
+                        fontSize: theme('fontSize.4xl.0') + 'rem',
                     },
                     h2: {
                         fontWeight: theme('fontWeight.medium'),
-                        fontSize: rem(theme('fontSize.3xl.0')),
+                        fontSize: theme('fontSize.3xl.0') + 'rem',
                     },
                     h3: {
                         fontWeight: theme('fontWeight.semibold'),
-                        fontSize: rem(theme('fontSize.2xl.0')),
+                        fontSize: theme('fontSize.2xl.0') + 'rem',
                     },
                     h4: {
                         fontWeight: theme('fontWeight.semibold'),
-                        fontSize: rem(theme('fontSize.xl.0')),
+                        fontSize: theme('fontSize.xl.0') + 'rem',
                     },
                     h5: {
                         fontWeight: theme('fontWeight.semibold'),
-                        fontSize: rem(theme('fontSize.lg.0')),
+                        fontSize: theme('fontSize.lg.0') + 'rem',
                     },
                     h6: {
                         fontWeight: theme('fontWeight.bold'),
-                        fontSize: theme('fontSize.base.0'),
+                        fontSize: theme('fontSize.base.0') + 'rem',
                     },
                     iframe: {
                         borderRadius: theme('borderRadius.lg'),
@@ -166,22 +166,22 @@ module.exports = {
             lg: {
                 css: {
                     h1: {
-                        fontSize: rem(theme('fontSize.5xl.0')),
+                        fontSize: theme('fontSize.5xl.0') + 'rem',
                     },
                     h2: {
-                        fontSize: rem(theme('fontSize.4xl.0')),
+                        fontSize: theme('fontSize.4xl.0') + 'rem',
                     },
                     h3: {
-                        fontSize: rem(theme('fontSize.3xl.0')),
+                        fontSize: theme('fontSize.3xl.0') + 'rem',
                     },
                     h4: {
-                        fontSize: rem(theme('fontSize.2xl.0')),
+                        fontSize: theme('fontSize.2xl.0') + 'rem',
                     },
                     h5: {
-                        fontSize: rem(theme('fontSize.xl.0')),
+                        fontSize: theme('fontSize.xl.0') + 'rem',
                     },
                     h6: {
-                        fontSize: rem(theme('fontSize.lg.0')),
+                        fontSize: theme('fontSize.lg.0') + 'rem',
                     },
                     img: {
                         marginTop: em(32, 18),
@@ -199,24 +199,24 @@ module.exports = {
             },
             xl: {
                 css: {
-                    fontSize: rem(theme('fontSize.lg.0')),
+                    fontSize: theme('fontSize.xl.0') + 'rem',
                     h1: {
-                        fontSize: rem(theme('fontSize.6xl.0')),
+                        fontSize: theme('fontSize.6xl.0') + 'rem',
                     },
                     h2: {
-                        fontSize: rem(theme('fontSize.5xl.0')),
+                        fontSize: theme('fontSize.5xl.0') + 'rem',
                     },
                     h3: {
-                        fontSize: rem(theme('fontSize.4xl.0')),
+                        fontSize: theme('fontSize.4xl.0') + 'rem',
                     },
                     h4: {
-                        fontSize: rem(theme('fontSize.3xl.0')),
+                        fontSize: theme('fontSize.3xl.0') + 'rem',
                     },
                     h5: {
-                        fontSize: rem(theme('fontSize.2xl.0')),
+                        fontSize: theme('fontSize.2xl.0') + 'rem',
                     },
                     h6: {
-                        fontSize: rem(theme('fontSize.xl.0')),
+                        fontSize: theme('fontSize.xl.0') + 'rem',
                     },
                     img: {
                         marginTop: em(40, 20),
@@ -234,7 +234,7 @@ module.exports = {
             },
             'text-base': {
                 css: {
-                    fontSize: rem(theme('fontSize.base.0')),
+                    fontSize: theme('fontSize.base.0') + 'rem',
                 }
             }
         }),
