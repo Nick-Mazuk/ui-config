@@ -119,23 +119,23 @@ module.exports = {
                     },
                     h1: {
                         fontWeight: theme('fontWeight.medium'),
-                        fontSize: theme('fontSize.4xl.0'),
+                        fontSize: rem(theme('fontSize.4xl.0')),
                     },
                     h2: {
                         fontWeight: theme('fontWeight.medium'),
-                        fontSize: theme('fontSize.3xl.0'),
+                        fontSize: rem(theme('fontSize.3xl.0')),
                     },
                     h3: {
                         fontWeight: theme('fontWeight.semibold'),
-                        fontSize: theme('fontSize.2xl.0'),
+                        fontSize: rem(theme('fontSize.2xl.0')),
                     },
                     h4: {
                         fontWeight: theme('fontWeight.semibold'),
-                        fontSize: theme('fontSize.xl.0'),
+                        fontSize: rem(theme('fontSize.xl.0')),
                     },
                     h5: {
                         fontWeight: theme('fontWeight.semibold'),
-                        fontSize: theme('fontSize.lg.0'),
+                        fontSize: rem(theme('fontSize.lg.0')),
                     },
                     h6: {
                         fontWeight: theme('fontWeight.bold'),
@@ -166,22 +166,22 @@ module.exports = {
             lg: {
                 css: {
                     h1: {
-                        fontSize: theme('fontSize.5xl.0'),
+                        fontSize: rem(theme('fontSize.5xl.0')),
                     },
                     h2: {
-                        fontSize: theme('fontSize.4xl.0'),
+                        fontSize: rem(theme('fontSize.4xl.0')),
                     },
                     h3: {
-                        fontSize: theme('fontSize.3xl.0'),
+                        fontSize: rem(theme('fontSize.3xl.0')),
                     },
                     h4: {
-                        fontSize: theme('fontSize.2xl.0'),
+                        fontSize: rem(theme('fontSize.2xl.0')),
                     },
                     h5: {
-                        fontSize: theme('fontSize.xl.0'),
+                        fontSize: rem(theme('fontSize.xl.0')),
                     },
                     h6: {
-                        fontSize: theme('fontSize.lg.0'),
+                        fontSize: rem(theme('fontSize.lg.0')),
                     },
                     img: {
                         marginTop: em(32, 18),
@@ -199,24 +199,24 @@ module.exports = {
             },
             xl: {
                 css: {
-                    fontSize: theme('fontSize.lg.0'),
+                    fontSize: rem(theme('fontSize.lg.0')),
                     h1: {
-                        fontSize: theme('fontSize.6xl.0'),
+                        fontSize: rem(theme('fontSize.6xl.0')),
                     },
                     h2: {
-                        fontSize: theme('fontSize.5xl.0'),
+                        fontSize: rem(theme('fontSize.5xl.0')),
                     },
                     h3: {
-                        fontSize: theme('fontSize.4xl.0'),
+                        fontSize: rem(theme('fontSize.4xl.0')),
                     },
                     h4: {
-                        fontSize: theme('fontSize.3xl.0'),
+                        fontSize: rem(theme('fontSize.3xl.0')),
                     },
                     h5: {
-                        fontSize: theme('fontSize.2xl.0'),
+                        fontSize: rem(theme('fontSize.2xl.0')),
                     },
                     h6: {
-                        fontSize: theme('fontSize.xl.0'),
+                        fontSize: rem(theme('fontSize.xl.0')),
                     },
                     img: {
                         marginTop: em(40, 20),
@@ -234,7 +234,7 @@ module.exports = {
             },
             'text-base': {
                 css: {
-                    fontSize: theme('fontSize.base.0'),
+                    fontSize: rem(theme('fontSize.base.0')),
                 }
             }
         }),

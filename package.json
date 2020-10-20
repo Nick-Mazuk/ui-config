@@ -13,12 +13,16 @@
     "devDependencies": {
         "@nick-mazuk/eslint-config": "^0.1.11",
         "@nick-mazuk/tsconfig": "^0.1.0",
-        "eslint": "^7.10.0"
+        "eslint": "^7.10.0",
+        "tailwindcss": "^1.8.10",
+        "postcss": "^7.0.27",
     },
     "dependencies": {
         "flat": "^5.0.2",
-        "postcss": "^7.0.27",
-        "tailwindcss": "^1.8.10",
         "typescript": "^4.0.3"
+    },
+    "peerDependencies": {
+        "tailwindcss": ">= 1.8.10",
+        "postcss": ">= 7.0.27"
     }
 }
