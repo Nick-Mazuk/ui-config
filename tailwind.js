@@ -119,27 +119,27 @@ module.exports = {
                     },
                     h1: {
                         fontWeight: theme('fontWeight.medium'),
-                        fontSize: theme('fontSize.4xl.0') + 'rem',
+                        fontSize: '2.25rem',
                     },
                     h2: {
                         fontWeight: theme('fontWeight.medium'),
-                        fontSize: theme('fontSize.3xl.0') + 'rem',
+                        fontSize: '1.875rem',
                     },
                     h3: {
                         fontWeight: theme('fontWeight.semibold'),
-                        fontSize: theme('fontSize.2xl.0') + 'rem',
+                        fontSize: '1.5rem',
                     },
                     h4: {
                         fontWeight: theme('fontWeight.semibold'),
-                        fontSize: theme('fontSize.xl.0') + 'rem',
+                        fontSize: '1.25rem',
                     },
                     h5: {
                         fontWeight: theme('fontWeight.semibold'),
-                        fontSize: theme('fontSize.lg.0') + 'rem',
+                        fontSize: '1.125rem',
                     },
                     h6: {
                         fontWeight: theme('fontWeight.bold'),
-                        fontSize: theme('fontSize.base.0') + 'rem',
+                        fontSize: '1rem',
                     },
                     iframe: {
                         borderRadius: theme('borderRadius.lg'),
@@ -165,23 +165,24 @@ module.exports = {
             },
             lg: {
                 css: {
+                    fontSize: '1.125rem',
                     h1: {
-                        fontSize: theme('fontSize.5xl.0') + 'rem',
+                        fontSize: '3rem',
                     },
                     h2: {
-                        fontSize: theme('fontSize.4xl.0') + 'rem',
+                        fontSize: '2.25rem',
                     },
                     h3: {
-                        fontSize: theme('fontSize.3xl.0') + 'rem',
+                        fontSize: '1.875rem',
                     },
                     h4: {
-                        fontSize: theme('fontSize.2xl.0') + 'rem',
+                        fontSize: '1.5rem',
                     },
                     h5: {
-                        fontSize: theme('fontSize.xl.0') + 'rem',
+                        fontSize: '1.25rem',
                     },
                     h6: {
-                        fontSize: theme('fontSize.lg.0') + 'rem',
+                        fontSize: '1.125rem',
                     },
                     img: {
                         marginTop: em(32, 18),
@@ -199,24 +200,24 @@ module.exports = {
             },
             xl: {
                 css: {
-                    fontSize: theme('fontSize.xl.0') + 'rem',
+                    fontSize: '1.125rem',
                     h1: {
-                        fontSize: theme('fontSize.6xl.0') + 'rem',
+                        fontSize: '4rem',
                     },
                     h2: {
-                        fontSize: theme('fontSize.5xl.0') + 'rem',
+                        fontSize: '3rem',
                     },
                     h3: {
-                        fontSize: theme('fontSize.4xl.0') + 'rem',
+                        fontSize: '2.25rem',
                     },
                     h4: {
-                        fontSize: theme('fontSize.3xl.0') + 'rem',
+                        fontSize: '1.875rem',
                     },
                     h5: {
-                        fontSize: theme('fontSize.2xl.0') + 'rem',
+                        fontSize: '1.5rem',
                     },
                     h6: {
-                        fontSize: theme('fontSize.xl.0') + 'rem',
+                        fontSize: '1.25rem',
                     },
                     img: {
                         marginTop: em(40, 20),
@@ -234,7 +235,7 @@ module.exports = {
             },
             'text-base': {
                 css: {
-                    fontSize: theme('fontSize.base.0') + 'rem',
+                    fontSize: '1rem',
                 }
             }
         }),
