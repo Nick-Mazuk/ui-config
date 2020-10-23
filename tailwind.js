@@ -319,7 +319,7 @@ module.exports = {
         borderWidth: ({ after }) => after(['first']),
         boxShadow: ({ after }) => after(['focus-within', 'active']),
         display: ({ after }) => after(['group-hover', 'group-focus']),
-        margin: ({ after }) => after(['focus', 'last']),
+        margin: ({ after }) => after(['focus', 'last', 'first']),
         scale: ({ after }) => after(['focus-within', 'active']),
         textColor: ({ after }) => after(['focus-within']),
     },
