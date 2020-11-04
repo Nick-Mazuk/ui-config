@@ -33,6 +33,7 @@ const addRule = (css, selector, prop, value) => {
 
 const addRules = (css) => {
     addRule(css, '.ql-editor', 'outline', 'none')
+    addRule(css, '.ql-clipboard', 'display', 'none')
 }
 
 const fn = (vars = {}) => {
