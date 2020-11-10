@@ -3,6 +3,7 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 const isColor = (color) => {
     return Array.isArray(color)
 }
+
 const getTailwindColor = (color, isArray = true) => {
     const colorString = isArray ? color.join(', ') : color
     return ({ opacityVariable, opacityValue }) => {
@@ -12,6 +13,7 @@ const getTailwindColor = (color, isArray = true) => {
         return `rgb(${colorString})`
     }
 }
+
 const createTailwindColors = (colors) => {
     const tailwindColors = {}
     for (const colorGroup in colors) {
@@ -310,6 +312,9 @@ module.exports = {
                     '50%': { opacity: 0.8 },
                 },
             },
+            flexShrink: {
+                '1/2': 0.5
+            }
         },
     },
     variants: {
