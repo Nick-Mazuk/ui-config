@@ -331,11 +331,11 @@ module.exports = {
     future: {
         removeDeprecatedGapUtilities: true,
         purgeLayersByDefault: true,
+        defaultLineHeights: true
     },
     dark: 'class',
     experimental: {
         darkModeVariant: true,
-        defaultLineHeights: true,
         extendedFontSizeScale: true,
     }
 }
