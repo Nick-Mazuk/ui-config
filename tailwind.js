@@ -92,7 +92,7 @@ module.exports = {
         boxShadow: {
             xs: '0 0 0 1px rgba(var(--c-gray-900), 0.05)',
             sm: '0 1px 2px 0 rgba(var(--c-gray-900), 0.05)',
-            default:
+            DEFAULT:
                 '0 1px 3px 0 rgba(var(--c-gray-900), 0.1), 0 1px 2px 0 rgba(var(--c-gray-900), 0.06)',
             md:
                 '0 4px 6px -1px rgba(var(--c-gray-900), 0.1), 0 2px 4px -1px rgba(var(--c-gray-900), 0.06)',
@@ -111,7 +111,7 @@ module.exports = {
             none: 'none',
         },
         typography: (theme) => ({
-            default: {
+            DEFAULT: {
                 css: {
                     color: theme('colors.gray.900'),
                     a: {
@@ -318,24 +318,18 @@ module.exports = {
         },
     },
     variants: {
-        animation: ({ after }) => after(['motion-safe', 'motion-reduce']),
-        backgroundColor: ({ after }) => after(['group-hover']),
-        backgroundOpacity: ({ after }) => after(['focus-within', 'active']),
-        borderWidth: ({ after }) => after(['first']),
-        boxShadow: ({ after }) => after(['focus-within', 'active']),
-        display: ({ after }) => after(['group-hover', 'group-focus']),
-        margin: ({ after }) => after(['focus', 'last', 'first']),
-        scale: ({ after }) => after(['focus-within', 'active']),
-        textColor: ({ after }) => after(['focus-within']),
-    },
-    future: {
-        removeDeprecatedGapUtilities: true,
-        purgeLayersByDefault: true,
-        defaultLineHeights: true
+        extend: {
+            animation: ['motion-safe', 'motion-reduce'],
+            backgroundColor: ['group-hover'],
+            backgroundOpacity: ['focus-within', 'active'],
+            borderWidth: ['first'],
+            boxShadow: ['focus-within', 'active'],
+            display: ['group-hover', 'group-focus'],
+            fontWeight: ['hover', 'focus'],
+            margin: ['focus', 'last', 'first'],
+            scale: ['focus-within', 'active'],
+            textColor: ['focus-within'],
+        }
     },
     dark: 'class',
-    experimental: {
-        darkModeVariant: true,
-        extendedFontSizeScale: true,
-    }
 }
