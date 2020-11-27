@@ -12,7 +12,7 @@ const addColors = (css) => {
     for (const color in flattenedColors) {
         if (typeof flattenedColors[color] === 'string') continue;
         decls.push(postcss.decl({
-            prop: '--c-' + color.toLocaleLowerCase(),
+            prop: '--c-' + color.toLowerCase(),
             value: flattenedColors[color].join(', ')
         }))
     }
