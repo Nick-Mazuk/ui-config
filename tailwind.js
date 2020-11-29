@@ -331,5 +331,6 @@ module.exports = {
             textColor: ['focus-within'],
         }
     },
+    plugins: [require('@tailwindcss/typography')],
     dark: 'class',
 }
