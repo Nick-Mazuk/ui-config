@@ -241,6 +241,20 @@ module.exports = {
                     },
                 }
             },
+            '2xl': {
+                css: {
+                    a: { 
+                        color: 'var(--c-primary-500)',
+                    },
+                }
+            },
+            sm: {
+                css: {
+                    a: { 
+                        color: 'var(--c-primary-500)',
+                    },
+                }
+            },
             'text-base': {
                 css: {
                     fontSize: '1rem',
