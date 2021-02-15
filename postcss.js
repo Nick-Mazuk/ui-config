@@ -1,48 +1,40 @@
 const flatten = require('flat')
 const colors = require('./colors')
 
-const addColors = (css) => {
-    const rule = postcss.rule({ selector: ':root' })
+const addRule = (root, Rule, selector, prop, value) => {
+    let rule = new Rule({ selector })
+    rule.append({ prop, value })
+
+    root.append(rule)
+}
+
+const addColors = (root, Rule) => {
     const flattenedColors = flatten(colors, {
         delimiter: '-',
         safe: true
     })
-    const decls = []
     for (const color in flattenedColors) {
         if (typeof flattenedColors[color] === 'string') continue;
-        decls.push(postcss.decl({
-            prop: '--c-' + color.toLowerCase(),
-            value: flattenedColors[color].join(', ')
-        }))
+        addRule(root, Rule, ':root', '--c-' + color.toLowerCase(), flattenedColors[color].join(', '))
     }
-    decls.push(postcss.decl({
-        prop: '--c-link',
-        value: 'var(--c-primary-default)'
-    }))
+    addRule(root, Rule, ':root', '--c-link', 'var(--c-primary-default)')
     css.prepend(rule.append(decls))
 }
 
-const addRule = (css, selector, prop, value) => {
-    const rule = postcss.rule({ selector: selector })
-    css.prepend(rule.append([postcss.decl({
-        prop: prop,
-        value: value
-    })]))
+const addRules = (root, Rule) => {
+    addRule(root, Rule, '.ql-editor', 'outline', 'none')
+    addRule(root, Rule, '.ql-clipboard', 'display', 'none')
 }
 
-const addRules = (css) => {
-    addRule(css, '.ql-editor', 'outline', 'none')
-    addRule(css, '.ql-clipboard', 'display', 'none')
-}
-
-const fn = (vars = {}) => {
-    return (css) => {
-        if (!css.source.input.file.includes('module')) {
-            addColors(css)
-            addRules(css)
+module.exports = () => {
+    return {
+        postcssPlugin: '@nick-mazuk/ui-config',
+        Rule (root, { Rule }) {
+            if (!root.source.input.file.includes('module')) {
+                addColors(root, Rule)
+                addRules(root, Rule)
+            }
         }
     }
 }
-
-module.exports = fn
 module.exports.postcss = true
