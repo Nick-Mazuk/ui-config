@@ -18,7 +18,6 @@ const addColors = (root, Rule) => {
         addRule(root, Rule, ':root', '--c-' + color.toLowerCase(), flattenedColors[color].join(', '))
     }
     addRule(root, Rule, ':root', '--c-link', 'var(--c-primary-default)')
-    css.prepend(rule.append(decls))
 }
 
 const addRules = (root, Rule) => {
