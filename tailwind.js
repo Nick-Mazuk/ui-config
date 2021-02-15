@@ -244,6 +244,9 @@ module.exports = {
             'text-base': {
                 css: {
                     fontSize: '1rem',
+                    a: { 
+                        color: 'var(--c-primary-500)',
+                    },
                 }
             }
         }),
