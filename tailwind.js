@@ -113,7 +113,7 @@ module.exports = {
         typography: (theme) => ({
             DEFAULT: {
                 css: {
-                    color: theme('colors.gray.900'),
+                    color: 'var(--c-gray-900)',
                     a: {
                         color: 'var(--c-primary-500)',
                         fontWeight: theme('fontWeight.semibold'),
