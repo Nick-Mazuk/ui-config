@@ -9,15 +9,17 @@ const addRule = (root, Rule, selector, prop, value) => {
 }
 
 const addColors = (root, Rule) => {
+    let rule = new Rule({ selector: ':root' })
     const flattenedColors = flatten(colors, {
         delimiter: '-',
         safe: true
     })
     for (const color in flattenedColors) {
         if (typeof flattenedColors[color] === 'string') continue;
-        addRule(root, Rule, ':root', '--c-' + color.toLowerCase(), flattenedColors[color].join(', '))
+        rule.append( {prop: '--c-' + color.toLowerCase(), value: flattenedColors[color].join(', ') })
     }
-    addRule(root, Rule, ':root', '--c-link', 'var(--c-primary-default)')
+    rule.append( {prop: '--c-link', value: 'var(--c-primary-default)' })
+    root.append(rule)
 }
 
 const addRules = (root, Rule) => {
