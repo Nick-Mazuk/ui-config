@@ -1,4 +1,3 @@
-const postcss = require('postcss')
 const flatten = require('flat')
 const colors = require('./colors')
 
@@ -45,4 +44,5 @@ const fn = (vars = {}) => {
     }
 }
 
-module.exports = postcss.plugin('ui-config', fn)
+module.exports = fn
+module.exports.postcss = true
