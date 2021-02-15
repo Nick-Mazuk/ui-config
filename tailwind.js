@@ -168,6 +168,9 @@ module.exports = {
             lg: {
                 css: {
                     fontSize: '1.125rem',
+                    a: { 
+                        color: 'var(--c-primary-500)',
+                    },
                     h1: {
                         fontSize: '3rem',
                     },
@@ -203,6 +206,9 @@ module.exports = {
             xl: {
                 css: {
                     fontSize: '1.125rem',
+                    a: { 
+                        color: 'var(--c-primary-500)',
+                    },
                     h1: {
                         fontSize: '4rem',
                     },
