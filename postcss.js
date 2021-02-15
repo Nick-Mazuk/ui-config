@@ -28,7 +28,8 @@ const addRules = (root, Rule) => {
 module.exports = () => {
     return {
         postcssPlugin: '@nick-mazuk/ui-config',
-        Rule (root, { Rule }) {
+        Rule(root, { Rule }) {
+            console.log('root', root);
             if (!root.source.input.file.includes('module')) {
                 addColors(root, Rule)
                 addRules(root, Rule)
