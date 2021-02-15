@@ -115,6 +115,7 @@ module.exports = {
                 css: {
                     color: theme('colors.gray.900'),
                     a: {
+                        color: 'var(--c-primary-500)',
                         fontWeight: theme('fontWeight.semibold'),
                         textDecoration: 'none'
                     },
