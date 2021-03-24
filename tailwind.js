@@ -340,21 +340,6 @@ module.exports = {
             }
         },
     },
-    variants: {
-        extend: {
-            animation: ['motion-safe', 'motion-reduce'],
-            backgroundColor: ['group-hover', 'focus-within'],
-            backgroundOpacity: ['focus-within', 'active'],
-            borderWidth: ['first'],
-            boxShadow: ['focus-within', 'active'],
-            display: ['group-hover', 'group-focus'],
-            fontWeight: ['hover', 'focus'],
-            margin: ['focus', 'last', 'first'],
-            padding: ['first', 'last'],
-            scale: ['focus-within', 'active'],
-            textColor: ['focus-within'],
-        }
-    },
     plugins: [require('@tailwindcss/typography')],
     dark: 'class',
 }
