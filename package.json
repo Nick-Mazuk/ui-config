@@ -13,19 +13,25 @@
     "devDependencies": {
         "@nick-mazuk/eslint-config": "^0.1.13",
         "@nick-mazuk/tsconfig": "^0.1.1",
+        "@tailwindcss/aspect-ratio": "^0.2.0",
+        "@tailwindcss/forms": "^0.2.1",
         "@tailwindcss/jit": "^0.1.8",
+        "@tailwindcss/line-clamp": "^0.2.0",
+        "@tailwindcss/typography": "^0.4.0",
         "eslint": "^7.22.0",
         "postcss": "^7.0.35",
-        "tailwindcss": "^1.9.6"
+        "tailwindcss": "^2.0.4"
     },
     "dependencies": {
-        "@tailwindcss/typography": "^0.3.1",
         "flat": "^5.0.2",
         "typescript": "^4.2.3"
     },
     "peerDependencies": {
+        "@tailwindcss/aspect-ratio": "^0.2.0",
+        "@tailwindcss/forms": "^0.2.1",
         "@tailwindcss/jit": "^0.1.8",
-        "@tailwindcss/typography": ">= 0.4.0",
+        "@tailwindcss/line-clamp": "^0.2.0",
+        "@tailwindcss/typography": "^0.4.0",
         "postcss": ">= 8.0.0",
         "tailwindcss": ">= 2.0.3"
     }
