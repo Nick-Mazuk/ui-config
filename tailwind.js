@@ -1,11 +1,13 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
+const flatten = require('flat')
 
 const isColor = (color) => {
     return Array.isArray(color)
 }
 
 const getTailwindColor = (color, isArray = true) => {
-    const colorString = isArray ? color.join(', ') : color
+    // const colorString = isArray ? color.join(', ') : color
+    const colorString = 'var(--c-' + color + ')'
     return ({ opacityVariable, opacityValue }) => {
         if (typeof opacityValue !== 'undefined') return `rgba(${colorString}, ${opacityValue})`
         if (typeof opacityVariable !== 'undefined')
@@ -16,13 +18,24 @@ const getTailwindColor = (color, isArray = true) => {
 
 const createTailwindColors = (colors) => {
     const tailwindColors = {}
+
     for (const colorGroup in colors) {
-        if (Object.prototype.hasOwnProperty.call(colors, colorGroup)) {
-            const item = colors[colorGroup]
-            if (isColor(item)) tailwindColors[colorGroup] = getTailwindColor(item)
-            else tailwindColors[colorGroup] = createTailwindColors(item)
+        if (isColor(colors[colorGroup])) {
+            tailwindColors[colorGroup] = getTailwindColor(colorGroup)
+        } else {
+            for (const colorName in colors[colorGroup])
+                tailwindColors[colorGroup] = createTailwindColors(colorGroup + '-' + colorName)
         }
     }
+
+
+    // for (const colorGroup in colors) {
+    //     if (Object.prototype.hasOwnProperty.call(colors, colorGroup)) {
+    //         const item = colors[colorGroup]
+    //         if (isColor(colorGroup)) tailwindColors[colorGroup] = getTailwindColor(colorGroup)
+    //         else tailwindColors[colorGroup] = createTailwindColors(colorGroup + '-' + color)
+    //     }
+    // }
     return tailwindColors
 }
 

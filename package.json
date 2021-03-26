@@ -37,5 +37,10 @@
         "@tailwindcss/typography": "^0.4.0",
         "postcss": ">= 8.0.0",
         "tailwindcss": ">= 2.0.3"
-    }
+    },
+    "files": [
+        "README.md",
+        "tailwind.js",
+        "colors.css"
+    ]
 }
