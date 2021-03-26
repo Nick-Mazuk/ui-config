@@ -37,7 +37,6 @@ const addColors = (root, Rule) => {
         const colorName = color.toLowerCase()
         rule.append({ prop: '--c-' + colorName, value: flattenedColors[color].join(', ') })
         darkRule.append({ prop: '--c-' + getColorDarkName(colorName), value: flattenedColors[color].join(', ') })
-        console.log('color', colorName, getColorDarkName(colorName));
     }
     rule.append( {prop: '--c-link', value: 'var(--c-primary-default)' })
     root.append(rule)
