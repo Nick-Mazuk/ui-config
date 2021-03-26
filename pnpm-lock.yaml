@@ -9,6 +9,7 @@ devDependencies:
   '@tailwindcss/jit': 0.1.8_postcss@7.0.35+tailwindcss@2.0.4
   '@tailwindcss/line-clamp': 0.2.0
   '@tailwindcss/typography': 0.4.0_tailwindcss@2.0.4
+  '@types/flat': 5.0.1
   eslint: 7.22.0
   postcss: 7.0.35
   tailwindcss: 2.0.4_postcss@7.0.35
@@ -352,6 +353,10 @@ packages:
       tailwindcss: 2.0.0-alpha.24 || ^2.0.0
     resolution:
       integrity: sha512-3BfOYT5MYNEq81Ism3L2qu/HRP2Q5vWqZtZRQqQrthHuaTK9qpuPfbMT5WATjAM5J1OePKBaI5pLoX4S1JGNMQ==
+  /@types/flat/5.0.1:
+    dev: true
+    resolution:
+      integrity: sha512-ykRODHi9G9exJdTZvQggsqCUtB7jqiwLHcXCjNMb7zgWx6Lc2bydIUYBG1+It6VXZVFaeROv6HqPjDCAsoPG3w==
   /@types/json-schema/7.0.7:
     dev: true
     resolution:
@@ -2949,6 +2954,7 @@ specifiers:
   '@tailwindcss/jit': ^0.1.8
   '@tailwindcss/line-clamp': ^0.2.0
   '@tailwindcss/typography': ^0.4.0
+  '@types/flat': ^5.0.1
   eslint: ^7.22.0
   flat: ^5.0.2
   postcss: ^7.0.35

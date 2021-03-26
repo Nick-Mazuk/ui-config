@@ -1,5 +1,0 @@
-{
-    "extends": "@nick-mazuk/tsconfig",
-    "include": ["**/*.ts", "*.ts"],
-    "exclude": ["node_modules"]
-}

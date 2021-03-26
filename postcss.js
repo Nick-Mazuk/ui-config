@@ -53,6 +53,7 @@ module.exports = () => {
         postcssPlugin: '@nick-mazuk/ui-config',
         Rule(root, { Rule }) {
             if (root.source && root.source.input && root.source.input.file && root.source.input.file.includes('colors.css')) {
+                console.log(root.source.input.file);
                 addColors(root, Rule)
                 addRules(root, Rule)
             }
