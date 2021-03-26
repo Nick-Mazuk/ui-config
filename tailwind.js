@@ -1,5 +1,4 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
-const flatten = require('flat')
 
 const isColor = (color) => {
     return Array.isArray(color)
@@ -23,8 +22,9 @@ const createTailwindColors = (colors) => {
         if (isColor(colors[colorGroup])) {
             tailwindColors[colorGroup] = getTailwindColor(colorGroup)
         } else {
-            for (const colorName in colors[colorGroup])
-                tailwindColors[colorGroup] = createTailwindColors(colorGroup + '-' + colorName)
+            tailwindColors[colorGroup] = {}
+            for (const colorName in colors[colorGroup]) 
+                tailwindColors[colorGroup][colorName] = getTailwindColor(colorGroup + '-' + colorName)
         }
     }
 

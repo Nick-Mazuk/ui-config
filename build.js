@@ -20,27 +20,30 @@ const getColorDarkName = (colorName) => {
     return colorNameParts.join('-')
 }
 
-const flattenedColors = flatten(colors, {
-    delimiter: '-',
-    safe: true
-})
-
-let lightColors = ':root{'
-let darkColors = '.dark{'
-
-for (const color in flattenedColors) {
-    if (typeof flattenedColors[color] === 'string') continue;
-    const colorName = color.toLowerCase()
-    const values =  flattenedColors[color].join(', ')
-
-    lightColors += '--c-' + colorName + ': ' + values + ';'
-    darkColors += '--c-' + getColorDarkName(colorName) + ': ' + values + ';'
+const createColorsCss = () => {
+    const flattenedColors = flatten(colors, {
+        delimiter: '-',
+        safe: true
+    })
+    
+    let lightColors = ':root{'
+    let darkColors = '.dark{'
+    
+    for (const color in flattenedColors) {
+        if (typeof flattenedColors[color] === 'string') continue;
+        const colorName = color.toLowerCase()
+        const values =  flattenedColors[color].join(', ')
+    
+        lightColors += '--c-' + colorName + ': ' + values + ';'
+        darkColors += '--c-' + getColorDarkName(colorName) + ': ' + values + ';'
+    }
+    
+    lightColors += '}'
+    darkColors += '}'
+    
+    const colorsCss = lightColors + '\n' + darkColors
+    
+    fs.writeFileSync('./colors.css', colorsCss)
 }
 
-lightColors += '}'
-darkColors += '}'
-
-const colorsCss = lightColors + '\n' + darkColors
-
-fs.writeFileSync('./colors.css', colorsCss)
-
+createColorsCss()
