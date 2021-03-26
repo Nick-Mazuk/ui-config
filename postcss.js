@@ -4,7 +4,15 @@ const colors = require('./colors')
 const getColorDarkName = (colorName) => {
     const colorNameParts = colorName.split('-')
     const lastNamePart = colorNameParts[colorNameParts.length - 1]
-    if (lastNamePart.match(/d\d/u))
+    if (lastNamePart === 'd')
+        colorNameParts[colorNameParts.length - 1] = 'default'
+    else if (lastNamePart === 'default')
+        colorNameParts[colorNameParts.length - 1] = 'd'
+    else if (lastNamePart === 'white')
+        colorNameParts[colorNameParts.length - 1] = 'black'
+    else if (lastNamePart === 'black')
+        colorNameParts[colorNameParts.length - 1] = 'white'
+    else if (lastNamePart.match(/d\d/u))
         colorNameParts[colorNameParts.length - 1].replace('d', '')
     else
         colorNameParts[colorNameParts.length - 1] = 'd' + colorNameParts[colorNameParts.length - 1]
@@ -45,7 +53,6 @@ module.exports = () => {
     return {
         postcssPlugin: '@nick-mazuk/ui-config',
         Rule(root, { Rule }) {
-            console.log(root.source.input.file);
             if (root.source && root.source.input && root.source.input.file && !root.source.input.file.includes('module')) {
                 addColors(root, Rule)
                 addRules(root, Rule)
