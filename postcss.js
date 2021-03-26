@@ -10,16 +10,26 @@ const addRule = (root, Rule, selector, prop, value) => {
 
 const addColors = (root, Rule) => {
     let rule = new Rule({ selector: ':root' })
+    let darkRule = new Rule({ selector: '.dark' })
     const flattenedColors = flatten(colors, {
         delimiter: '-',
         safe: true
     })
     for (const color in flattenedColors) {
         if (typeof flattenedColors[color] === 'string') continue;
-        rule.append( {prop: '--c-' + color.toLowerCase(), value: flattenedColors[color].join(', ') })
+        const colorName = color.toLowerCase()
+        rule.append({ prop: '--c-' + colorName, value: flattenedColors[color].join(', ') })
+        const colorNameParts = colorName.split('-')
+        const lastNamePart = colorNameParts[colorNameParts.length - 1]
+        if (lastNamePart.match(/d\d/u))
+            colorNameParts[colorNameParts.length - 1].replace('d', '')
+        else
+            colorNameParts[colorNameParts.length - 1] = 'd' + colorNameParts[colorNameParts.length - 1]
+        darkRule.append({ prop: '--c-' + colorNameParts.join('-'), value: flattenedColors[color].join(', ') })
     }
     rule.append( {prop: '--c-link', value: 'var(--c-primary-default)' })
     root.append(rule)
+    root.append(darkRule)
 }
 
 const addRules = (root, Rule) => {
