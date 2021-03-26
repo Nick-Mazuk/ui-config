@@ -13,10 +13,10 @@ const getColorDarkName = (colorName) => {
         colorNameParts[colorNameParts.length - 1] = 'black'
     else if (lastNamePart === 'black')
         colorNameParts[colorNameParts.length - 1] = 'white'
-    else if (lastNamePart.match(/d\d/u))
-        colorNameParts[colorNameParts.length - 1].replace('d', '')
+    else if (lastNamePart.match('d'))
+        colorNameParts[colorNameParts.length - 1] = lastNamePart.replace('d', '')
     else
-        colorNameParts[colorNameParts.length - 1] = 'd' + colorNameParts[colorNameParts.length - 1]
+        colorNameParts[colorNameParts.length - 1] = 'd' + lastNamePart
     return colorNameParts.join('-')
 }
 
@@ -32,7 +32,9 @@ const createColorsCss = () => {
     for (const color in flattenedColors) {
         if (typeof flattenedColors[color] === 'string') continue;
         const colorName = color.toLowerCase()
-        const values =  flattenedColors[color].join(', ')
+        const values = flattenedColors[color].join(', ')
+        
+        console.log(colorName, getColorDarkName(colorName));
     
         lightColors += '--c-' + colorName + ': ' + values + ';'
         darkColors += '--c-' + getColorDarkName(colorName) + ': ' + values + ';'
