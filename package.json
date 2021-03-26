@@ -41,6 +41,7 @@
     "files": [
         "README.md",
         "tailwind.js",
-        "colors.css"
+        "colors.css",
+        "colors.js"
     ]
 }
