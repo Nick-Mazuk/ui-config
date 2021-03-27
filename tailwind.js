@@ -87,12 +87,8 @@ module.exports = {
             'input-error-outline': 'inset 0 0 0 2px rgba(var(--c-error-500), 1)',
             none: 'none',
         },
-        // typography: () => ({
-        //     DEFAULT: {
-        //         css: {}
-        //     }
-        // }),
         extend: {
+            typography: () => ({}),
             fontFamily: {
                 sans: ['Inter', ...defaultTheme.fontFamily.sans],
                 mono: ['SFMono-Regular', ...defaultTheme.fontFamily.mono],
