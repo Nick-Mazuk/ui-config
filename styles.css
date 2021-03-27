@@ -47,6 +47,6 @@
     }
 
     .link {
-        @apply text-link
+        @apply text-semibold no-underline text-link hover:underline
     }
 }

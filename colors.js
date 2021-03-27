@@ -1,10 +1,10 @@
 const colors = {
     black: [0, 0, 0],
     white: [255, 255, 255],
-    // taken from primary
     link: {
+        // taken from primary 500 and d600
         DEFAULT: [13, 100, 226],
-        d: [0, 124, 255],
+        d: [58, 152, 253],
     },
     primary: {
         DEFAULT: [13, 100, 226],
