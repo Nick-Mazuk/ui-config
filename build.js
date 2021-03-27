@@ -33,8 +33,6 @@ const createColorsCss = () => {
         if (typeof flattenedColors[color] === 'string') continue;
         const colorName = color.toLowerCase()
         const values = flattenedColors[color].join(', ')
-        
-        console.log(colorName, getColorDarkName(colorName));
     
         lightColors += '--c-' + colorName + ': ' + values + ';'
         darkColors += '--c-' + getColorDarkName(colorName) + ': ' + values + ';'
