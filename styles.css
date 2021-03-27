@@ -2,6 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
+.text-bold {
+    @apply font-semibold;
+}
+
+.text-semibold {
+    @apply font-medium;
+}
+
+.text-black {
+    @apply font-bold;
+}
+
+.text-uppercase {
+    @apply uppercase text-semibold;
+}
+
 .h1 {
-    @apply text-4xl sm:text-5xl lg:text-6xl font-semibold
+    @apply text-4xl sm:text-5xl lg:text-6xl text-bold;
+}
+
+.h2 {
+    @apply text-3xl sm:text-4xl lg:text-5xl text-bold;
+}
+
+.h3 {
+    @apply text-2xl sm:text-3xl lg:text-4xl text-bold;
+}
+
+.h4 {
+    @apply text-xl sm:text-2xl lg:text-3xl text-bold;
+}
+
+.h5 {
+    @apply text-lg sm:text-xl lg:text-2xl text-black;
+}
+
+.h6 {
+    @apply text-base sm:text-lg text-black;
 }
