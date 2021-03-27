@@ -40,7 +40,6 @@ module.exports = {
             ...createTailwindColors(require('./colors')),
             transparent: 'transparent',
             current: 'currentColor',
-            link: getTailwindColor('var(--c-link)', false)
         },
         inset: (theme, { negative }) => ({
             auto: 'auto',

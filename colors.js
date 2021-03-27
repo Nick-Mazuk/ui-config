@@ -1,6 +1,11 @@
 const colors = {
     black: [0, 0, 0],
     white: [255, 255, 255],
+    // taken from primary
+    link: {
+        DEFAULT: [13, 100, 226],
+        d: [0, 124, 255],
+    },
     primary: {
         DEFAULT: [13, 100, 226],
         d: [0, 124, 255],
