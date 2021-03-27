@@ -1,7 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 const getTailwindColor = (color) => {
-    const colorString = 'var(--c-' + color + ')'
+    const colorString = 'var(--c-' + color.toLowerCase() + ')'
     return ({ opacityVariable, opacityValue }) => {
         if (typeof opacityValue !== 'undefined') return `rgba(${colorString}, ${opacityValue})`
         if (typeof opacityVariable !== 'undefined')
