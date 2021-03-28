@@ -50,3 +50,27 @@
         @apply text-semibold no-underline text-link hover:underline
     }
 }
+
+
+
+.prose h1 {
+    @apply h2;
+}
+.prose h2 {
+    @apply h3;
+}
+.prose h3 {
+    @apply h5;
+}
+.prose h4 {
+    @apply h6;
+}
+.prose pre {
+    @apply bg-gray-50 text-gray-900 bg-opacity-70;
+}
+.prose a {
+    @apply link;
+}
+.prose img {
+    @apply rounded-lg;
+}
