@@ -51,6 +51,9 @@
     }
 }
 
+.prose.responsive {
+    @apply prose-sm lg:prose-lg sm:prose
+}
 .prose.responsive h1 {
     @apply h2;
 }
