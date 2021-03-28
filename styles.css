@@ -51,20 +51,32 @@
     }
 }
 
-
-
-.prose h1 {
+.prose.responsive h1 {
     @apply h2;
 }
-.prose h2 {
+.prose.responsive h2 {
     @apply h3;
 }
-.prose h3 {
+.prose.responsive h3 {
     @apply h5;
 }
-.prose h4 {
+.prose.responsive h4 {
     @apply h6;
 }
+
+.prose:not(.responsive) h1 {
+    @apply h2 text-4xl;
+}
+.prose:not(.responsive) h2 {
+    @apply h3 text-3xl;
+}
+.prose:not(.responsive) h3 {
+    @apply h5 text-xl;
+}
+.prose:not(.responsive) h4 {
+    @apply h6 text-base;
+}
+
 .prose pre {
     @apply bg-gray-50 text-gray-900 bg-opacity-70;
 }
@@ -73,4 +85,7 @@
 }
 .prose img {
     @apply rounded-lg;
+}
+.prose blockquote {
+    @apply not-italic
 }
