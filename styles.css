@@ -1,6 +1,5 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
 
 @layer utilities {
 
@@ -50,6 +49,8 @@
         @apply text-semibold no-underline text-link hover:underline
     }
 }
+
+@tailwind utilities;
 
 .prose.responsive h1 {
     @apply h2;
