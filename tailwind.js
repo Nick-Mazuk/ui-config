@@ -88,7 +88,6 @@ module.exports = {
             none: 'none',
         },
         extend: {
-            typography: () => ({}),
             fontFamily: {
                 sans: ['Inter', ...defaultTheme.fontFamily.sans],
                 mono: ['SFMono-Regular', ...defaultTheme.fontFamily.mono],
