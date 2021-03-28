@@ -90,5 +90,5 @@
     @apply rounded-lg;
 }
 .prose blockquote {
-    @apply not-italic
+    @apply not-italic sm:not-italic md:not-italic lg:not-italic xl:not-italic 2xl:not-italic;
 }
