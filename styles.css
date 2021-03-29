@@ -23,19 +23,19 @@
     }
     
     .h1 {
-        @apply text-4xl sm:text-5xl lg:text-6xl text-bold;
+        @apply text-4xl sm:text-5xl lg:text-6xl text-bold font-display;
     }
     
     .h2 {
-        @apply text-3xl sm:text-4xl lg:text-5xl text-bold;
+        @apply text-3xl sm:text-4xl lg:text-5xl text-bold font-display;
     }
     
     .h3 {
-        @apply text-2xl sm:text-3xl lg:text-4xl text-bold;
+        @apply text-2xl sm:text-3xl lg:text-4xl text-bold font-display;
     }
     
     .h4 {
-        @apply text-xl sm:text-2xl lg:text-3xl text-bold;
+        @apply text-xl sm:text-2xl lg:text-3xl text-bold font-display;
     }
     
     .h5 {
@@ -52,7 +52,7 @@
 }
 
 .prose.responsive {
-    @apply prose-sm lg:prose-lg sm:prose
+    @apply prose-sm sm:prose lg:prose-lg
 }
 .prose.responsive h1 {
     @apply h2;
@@ -88,7 +88,7 @@
     @apply bg-gray-50 text-gray-900 bg-opacity-70 !important;
 }
 .prose a {
-    @apply link !important;
+    @apply link sm:link md:link lg:link !important;
 }
 .prose img {
     @apply rounded-lg;

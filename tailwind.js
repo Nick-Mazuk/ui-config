@@ -90,6 +90,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ['Inter', ...defaultTheme.fontFamily.sans],
+                display: ['Gilroy', 'Inter', ...defaultTheme.fontFamily.sans],
                 mono: ['SFMono-Regular', ...defaultTheme.fontFamily.mono],
             },
             scale: {
