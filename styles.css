@@ -87,7 +87,8 @@
 .prose pre {
     @apply bg-gray-50 text-gray-900 bg-opacity-70 !important;
 }
-.prose a {
+.prose a,
+.prose.responsive {
     @apply link sm:link md:link lg:link !important;
 }
 .prose img {
