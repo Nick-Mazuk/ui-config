@@ -39,7 +39,7 @@
     }
     
     .h5 {
-        @apply text-lg sm:text-xl lg:text-2xl text-black;
+        @apply text-lg sm:text-xl lg:text-2xl text-bold font-display;
     }
     
     .h6 {
