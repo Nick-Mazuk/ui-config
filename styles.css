@@ -61,6 +61,10 @@
     }
 }
 
+.prose {
+    @apply text-gray-900;
+}
+
 .prose h1 {
     @apply h2;
 }
