@@ -31,19 +31,19 @@
     }
     
     .h2 {
-        @apply lg:text-5xl text-bold font-display;
+        @apply text-5xl text-bold font-display;
     }
     
     .h3 {
-        @apply lg:text-4xl text-bold font-display;
+        @apply text-4xl text-bold font-display;
     }
     
     .h4 {
-        @apply lg:text-3xl text-bold font-display;
+        @apply text-3xl text-bold font-display;
     }
     
     .h5 {
-        @apply lg:text-2xl text-bold font-display;
+        @apply text-2xl text-bold font-display;
     }
     
     .h6 {
@@ -67,7 +67,9 @@
 .prose h4 {
     @apply h6;
 }
-
+.prose code {
+    @apply text-highlight;
+}
 .prose pre {
     @apply bg-gray-50 text-gray-900 bg-opacity-70;
 }
