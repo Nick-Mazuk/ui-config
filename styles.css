@@ -6,6 +6,10 @@
     * {
         @apply min-w-0 min-h-0;
     }
+
+    body {
+        @apply bg-background text-gray-900 overflow-x-hidden font-normal;
+    }
 }
 
 @layer utilities {
@@ -59,10 +63,6 @@
     .link {
         @apply text-semibold no-underline text-link hover:underline;
     }
-}
-
-body {
-    @apply bg-background text-gray-900 overflow-x-hidden font-normal;
 }
 
 .prose {
