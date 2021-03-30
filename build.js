@@ -33,7 +33,8 @@ const getDerivedLightColors = () => {
 
 const getDerivedDarkColors = () => {
     let output = ''
-    output += createColorDefinition('shadow', '#0a0b0f')
+    output += createColorDefinition('shadow', '0,0,0')
+    output += createColorDefinition('background', '#0a0b0f')
     return output
 }
 
