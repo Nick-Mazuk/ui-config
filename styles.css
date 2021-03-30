@@ -5,7 +5,7 @@
 @layer utilities {
 
     .wrapper {
-        @apply mx-auto px-6 max-w-screen-lg;
+        @apply mx-auto mx-6 max-w-screen-lg;
     }
 
     /* TEXT */
