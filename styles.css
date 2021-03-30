@@ -4,6 +4,10 @@
 
 @layer utilities {
 
+    .wrapper {
+        @apply mx-auto px-4 max-w-screen-2xl md:px-8;
+    }
+
     /* TEXT */
 
     .text-bold {
