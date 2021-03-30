@@ -5,7 +5,7 @@
 @layer utilities {
 
     .wrapper {
-        @apply mx-auto px-4 max-w-screen-2xl md:px-8;
+        @apply mx-auto px-4 max-w-screen-lg sm:px-8;
     }
 
     /* TEXT */
@@ -51,12 +51,12 @@
     }
 
     .link {
-        @apply text-semibold no-underline text-link hover:underline
+        @apply text-semibold no-underline text-link hover:underline;
     }
 }
 
 .prose.responsive {
-    @apply prose-sm sm:prose lg:prose-lg
+    @apply prose-sm sm:prose lg:prose-lg;
 }
 .prose.responsive h1 {
     @apply h2;
@@ -100,4 +100,8 @@
 }
 .prose blockquote {
     @apply not-italic !important;
+}
+
+:target {
+    scroll-margin-top: 96px;
 }
