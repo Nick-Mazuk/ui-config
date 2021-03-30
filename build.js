@@ -36,6 +36,7 @@ const getDerivedDarkColors = () => {
     output += createColorDefinition('shadow', '0,0,0')
     output += createColorDefinition('background', 'var(--c-gray-20)')
     output += '--shadow-opacity: 1'
+    output += '--font-weight-multiplier: 0.85'
     return output
 }
 
