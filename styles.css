@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    * {
+        @apply min-w-0 min-h-0;
+    }
+}
+
 @layer utilities {
 
     .wrapper {
