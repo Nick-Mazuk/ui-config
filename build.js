@@ -27,7 +27,7 @@ const createColorDefinition = (name, value) => {
 const getDerivedLightColors = () => {
     let output = ''
     output += createColorDefinition('shadow', 'var(--c-gray-900)')
-    output += createColorDefinition('background', 'white')
+    output += createColorDefinition('background', '255, 255, 255')
     return output
 }
 
