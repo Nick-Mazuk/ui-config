@@ -20,6 +20,22 @@ const getColorDarkName = (colorName) => {
     return colorNameParts.join('-')
 }
 
+const createColorDefinition = (name, value) => {
+    return '--c-' + name + ': ' + value + ';'
+}
+
+const getDerivedLightColors = () => {
+    let output = ''
+    output += createColorDefinition('shadow', 'var(--c-gray-900)')
+    return output
+}
+
+const getDerivedDarkColors = () => {
+    let output = ''
+    output += createColorDefinition('shadow', 'black')
+    return output
+}
+
 const createColorsCss = () => {
     const flattenedColors = flatten(colors, {
         delimiter: '-',
@@ -33,13 +49,12 @@ const createColorsCss = () => {
         if (typeof flattenedColors[color] === 'string') continue;
         const colorName = color.toLowerCase()
         const values = flattenedColors[color].join(', ')
-    
-        lightColors += '--c-' + colorName + ': ' + values + ';'
-        darkColors += '--c-' + getColorDarkName(colorName) + ': ' + values + ';'
+        lightColors += createColorDefinition(colorName, values)
+        darkColors += createColorDefinition(getColorDarkName(colorName), values)
     }
     
-    lightColors += '}'
-    darkColors += '}'
+    lightColors += getDerivedLightColors() + '}'
+    darkColors += getDerivedDarkColors() + '}'
     
     const colorsCss = lightColors + '\n' + darkColors
     
