@@ -5,7 +5,7 @@
 @layer utilities {
 
     .wrapper {
-        @apply mx-auto mx-6 max-w-screen-lg;
+        @apply mx-auto px-6 max-w-screen-lg;
     }
 
     /* TEXT */
@@ -27,27 +27,27 @@
     }
     
     .h1 {
-        @apply text-4xl sm:text-5xl lg:text-6xl text-bold font-display;
+        @apply text-6xl text-bold font-display;
     }
     
     .h2 {
-        @apply text-3xl sm:text-4xl lg:text-5xl text-bold font-display;
+        @apply lg:text-5xl text-bold font-display;
     }
     
     .h3 {
-        @apply text-2xl sm:text-3xl lg:text-4xl text-bold font-display;
+        @apply lg:text-4xl text-bold font-display;
     }
     
     .h4 {
-        @apply text-xl sm:text-2xl lg:text-3xl text-bold font-display;
+        @apply lg:text-3xl text-bold font-display;
     }
     
     .h5 {
-        @apply text-lg sm:text-xl lg:text-2xl text-bold font-display;
+        @apply lg:text-2xl text-bold font-display;
     }
     
     .h6 {
-        @apply text-base sm:text-lg text-black;
+        @apply text-xl text-bold font-display;
     }
 
     .link {
@@ -55,51 +55,31 @@
     }
 }
 
-.prose.responsive {
-    @apply prose-sm sm:prose lg:prose-lg;
-}
-.prose.responsive h1 {
+.prose h1 {
     @apply h2;
 }
-.prose.responsive h2 {
+.prose h2 {
     @apply h3;
 }
-.prose.responsive h3 {
+.prose h3 {
     @apply h5;
 }
-.prose.responsive h4 {
+.prose h4 {
     @apply h6;
-}
-
-.prose:not(.responsive) h1 {
-    @apply h2;
-    @apply text-4xl !important;
-}
-.prose:not(.responsive) h2 {
-    @apply h3;
-    @apply text-3xl !important;
-}
-.prose:not(.responsive) h3 {
-    @apply h5;
-    @apply text-xl !important;
-}
-.prose:not(.responsive) h4 {
-    @apply h6;
-    @apply text-base !important;
 }
 
 .prose pre {
-    @apply bg-gray-50 text-gray-900 bg-opacity-70 !important;
+    @apply bg-gray-50 text-gray-900 bg-opacity-70;
 }
 .prose a,
 .prose.responsive a {
-    @apply link sm:link md:link lg:link !important;
+    @apply link;
 }
 .prose img {
     @apply rounded-lg;
 }
 .prose blockquote {
-    @apply not-italic !important;
+    @apply not-italic;
 }
 
 :target {
