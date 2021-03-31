@@ -6,14 +6,14 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 100 900;
-    font-display: optional;
+    font-display: swap;
     src: url('https://fonts.nickmazuk.com/inter.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'Gilroy';
     font-style: normal;
-    font-display: optional;
+    font-display: swap;
     src: url('https://fonts.nickmazuk.com/gilroy-semibold.woff2') format('woff2');
 }
 
