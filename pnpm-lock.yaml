@@ -2,7 +2,7 @@ dependencies:
   flat: 5.0.2
   typescript: 4.2.3
 devDependencies:
-  '@nick-mazuk/eslint-config': 0.1.13_eslint@7.22.0+typescript@4.2.3
+  '@nick-mazuk/eslint-config': 0.7.46_eslint@7.22.0+typescript@4.2.3
   '@nick-mazuk/tsconfig': 0.1.1_typescript@4.2.3
   '@tailwindcss/aspect-ratio': 0.2.0
   '@tailwindcss/forms': 0.2.1
@@ -251,32 +251,36 @@ packages:
     dev: true
     resolution:
       integrity: sha512-kwOXw8fZ0Lt1QmeOOrd+o4Ibvp4UTEBFQbzvWldjlKv5n+G9sXfIPn1hh63IQIL8K8vbvv1oYMJiIUbuy9bGaA==
-  /@nick-mazuk/eslint-config/0.1.13_eslint@7.22.0+typescript@4.2.3:
+  /@nick-mazuk/eslint-config/0.7.46_eslint@7.22.0+typescript@4.2.3:
     dependencies:
       '@typescript-eslint/eslint-plugin': 4.19.0_f26dcf5ec38a04241b14c26bc931244e
       '@typescript-eslint/parser': 4.19.0_eslint@7.22.0+typescript@4.2.3
       eslint: 7.22.0
       eslint-config-prettier: 8.1.0_eslint@7.22.0
+      eslint-plugin-chai-friendly: 0.6.0_eslint@7.22.0
+      eslint-plugin-cypress: 2.11.2_eslint@7.22.0
       eslint-plugin-deprecation: 1.2.0_eslint@7.22.0+typescript@4.2.3
       eslint-plugin-eslint-comments: 3.2.0_eslint@7.22.0
       eslint-plugin-import: 2.22.1_eslint@7.22.0
+      eslint-plugin-jest: 24.3.2_8e2023fbce137f7e95ab556d58e437c3
       eslint-plugin-jsx-a11y: 6.4.1_eslint@7.22.0
       eslint-plugin-no-secrets: 0.8.9_eslint@7.22.0
-      eslint-plugin-prettier: 3.3.1_44b94358ac15c7c093df3d5421ccc811
+      eslint-plugin-prettier: 3.3.1_781bdfd970d0df61a0538544a4d5b6fa
       eslint-plugin-promise: 4.3.1
       eslint-plugin-react: 7.23.1_eslint@7.22.0
       eslint-plugin-react-hooks: 4.2.0_eslint@7.22.0
       eslint-plugin-sonarjs: 0.6.0_eslint@7.22.0
+      eslint-plugin-svelte3: 3.1.2_eslint@7.22.0
+      eslint-plugin-testing-library: 3.10.2_eslint@7.22.0+typescript@4.2.3
       eslint-plugin-unicorn: 29.0.0_eslint@7.22.0
       eslint-plugin-unused-imports: 1.1.0
-      prettier: 2.2.1
       typescript: 4.2.3
     dev: true
     peerDependencies:
-      eslint: '>= 7.3.0'
-      typescript: '>= 3.9.7'
+      eslint: '>= 7.23.0'
+      typescript: '>= 4.2.3'
     resolution:
-      integrity: sha512-6Vm+O3U9+h+hCeyzFSWMSilBm7j3kwpVmfGTEWSMFBU1URH4UWimzD6i6PleObuWWb+AFTMBDRzKAd0CWKk0EQ==
+      integrity: sha512-hG+laCmwdKos13Uh9K1HM2hXxPcWdyEL8wg0HEKt2ofP0UV65RN91YsYiqdGOgBpuezhVWVrfRn3lc6pM2ZNDQ==
   /@nick-mazuk/tsconfig/0.1.1_typescript@4.2.3:
     dependencies:
       typescript: 4.2.3
@@ -1079,6 +1083,25 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-6j9xxegbqe8/kZY8cYpcp0xhbK0EgJlg3g9mib3/miLaExuuwc3n5UEfSnU6hWMbT0FAYVvDbL9RrRgpUeQIvA==
+  /eslint-plugin-chai-friendly/0.6.0_eslint@7.22.0:
+    dependencies:
+      eslint: 7.22.0
+    dev: true
+    engines:
+      node: '>=0.10.0'
+    peerDependencies:
+      eslint: '>=3.0.0'
+    resolution:
+      integrity: sha512-Uvvv1gkbRGp/qfN15B0kQyQWg+oFA8buDSqrwmW3egNSk/FpqH2MjQqKOuKwmEL6w4QIQrIjDp+gg6kGGmD3oQ==
+  /eslint-plugin-cypress/2.11.2_eslint@7.22.0:
+    dependencies:
+      eslint: 7.22.0
+      globals: 11.12.0
+    dev: true
+    peerDependencies:
+      eslint: '>= 3.2.1'
+    resolution:
+      integrity: sha512-1SergF1sGbVhsf7MYfOLiBhdOg6wqyeV9pXUAIDIffYTGMN3dTBQS9nFAzhLsHhO+Bn0GaVM1Ecm71XUidQ7VA==
   /eslint-plugin-deprecation/1.2.0_eslint@7.22.0+typescript@4.2.3:
     dependencies:
       '@typescript-eslint/experimental-utils': 3.10.1_eslint@7.22.0+typescript@4.2.3
@@ -1127,6 +1150,23 @@ packages:
       eslint: ^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0
     resolution:
       integrity: sha512-8K7JjINHOpH64ozkAhpT3sd+FswIZTfMZTjdx052pnWrgRCVfp8op9tbjpAk3DdUeI/Ba4C8OjdC0r90erHEOw==
+  /eslint-plugin-jest/24.3.2_8e2023fbce137f7e95ab556d58e437c3:
+    dependencies:
+      '@typescript-eslint/eslint-plugin': 4.19.0_f26dcf5ec38a04241b14c26bc931244e
+      '@typescript-eslint/experimental-utils': 4.19.0_eslint@7.22.0+typescript@4.2.3
+      eslint: 7.22.0
+    dev: true
+    engines:
+      node: '>=10'
+    peerDependencies:
+      '@typescript-eslint/eslint-plugin': '>= 4'
+      eslint: '>=5'
+      typescript: '*'
+    peerDependenciesMeta:
+      '@typescript-eslint/eslint-plugin':
+        optional: true
+    resolution:
+      integrity: sha512-cicWDr+RvTAOKS3Q/k03+Z3odt3VCiWamNUHWd6QWbVQWcYJyYgUTu8x0mx9GfeDEimawU5kQC+nQ3MFxIM6bw==
   /eslint-plugin-jsx-a11y/6.4.1_eslint@7.22.0:
     dependencies:
       '@babel/runtime': 7.13.10
@@ -1159,11 +1199,10 @@ packages:
       eslint: '>=3.0.0'
     resolution:
       integrity: sha512-CqaBxXrImABCtxMWspAnm8d5UKkpNylC7zqVveb+fJHEvsSiNGJlSWzdSIvBUnW1XhJXkzifNIZQC08rEII5Ng==
-  /eslint-plugin-prettier/3.3.1_44b94358ac15c7c093df3d5421ccc811:
+  /eslint-plugin-prettier/3.3.1_781bdfd970d0df61a0538544a4d5b6fa:
     dependencies:
       eslint: 7.22.0
       eslint-config-prettier: 8.1.0_eslint@7.22.0
-      prettier: 2.2.1
       prettier-linter-helpers: 1.0.0
     dev: true
     engines:
@@ -1225,6 +1264,30 @@ packages:
       eslint: ^5.0.0 || ^6.0.0 || ^7.0.0
     resolution:
       integrity: sha512-y+sXXWsYVW2kNEjmZI87laFspwC/hic7wyMjsPFoST8aQ2hESUVavkZjnTeVdHMOmlmcloKkyX/GJJetmfBY4Q==
+  /eslint-plugin-svelte3/3.1.2_eslint@7.22.0:
+    dependencies:
+      eslint: 7.22.0
+    dev: true
+    engines:
+      node: '>=10'
+    peerDependencies:
+      eslint: '>=6.0.0'
+      svelte: ^3.2.0
+    resolution:
+      integrity: sha512-+aGgYFC/yjhGXmBevzwICFVif8tu++C9/lRg8cE6TTS45Hw8qZ6t5wItSXVNPqnxJ212ik+bad1F0Y9A3Swo0Q==
+  /eslint-plugin-testing-library/3.10.2_eslint@7.22.0+typescript@4.2.3:
+    dependencies:
+      '@typescript-eslint/experimental-utils': 3.10.1_eslint@7.22.0+typescript@4.2.3
+      eslint: 7.22.0
+    dev: true
+    engines:
+      node: ^10.12.0 || >=12.0.0
+      npm: '>=6'
+    peerDependencies:
+      eslint: ^5 || ^6 || ^7
+      typescript: '*'
+    resolution:
+      integrity: sha512-WAmOCt7EbF1XM8XfbCKAEzAPnShkNSwcIsAD2jHdsMUT9mZJPjLCG7pMzbcC8kK366NOuGip8HKLDC+Xk4yIdA==
   /eslint-plugin-unicorn/29.0.0_eslint@7.22.0:
     dependencies:
       ci-info: 3.1.1
@@ -2409,13 +2472,6 @@ packages:
       node: '>=6.0.0'
     resolution:
       integrity: sha512-GbK2cP9nraSSUF9N2XwUwqfzlAFlMNYYl+ShE/V+H8a9uNl/oUqB1w2EL54Jh0OlyRSd8RfWYJ3coVS4TROP2w==
-  /prettier/2.2.1:
-    dev: true
-    engines:
-      node: '>=10.13.0'
-    hasBin: true
-    resolution:
-      integrity: sha512-PqyhM2yCjg/oKkFPtTGUojv7gnZAoG80ttl45O6x2Ug/rMJw4wcc9k6aaf2hibP7BGVCCM33gZoGjyvt9mm16Q==
   /pretty-hrtime/1.0.3:
     dev: true
     engines:
@@ -2976,7 +3032,7 @@ packages:
     resolution:
       integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==
 specifiers:
-  '@nick-mazuk/eslint-config': ^0.1.13
+  '@nick-mazuk/eslint-config': ^0.7.0
   '@nick-mazuk/tsconfig': ^0.1.1
   '@tailwindcss/aspect-ratio': ^0.2.0
   '@tailwindcss/forms': ^0.2.1
