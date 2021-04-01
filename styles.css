@@ -82,7 +82,7 @@
     /* other */
 
     .border-light {
-        @apply border border-gray-50 dark:border-gray-100
+        @apply border-gray-50 dark:border-gray-100
     }
 }
 
