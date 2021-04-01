@@ -78,6 +78,12 @@
     .link {
         @apply text-semibold no-underline text-link hover:underline;
     }
+
+    /* other */
+
+    .border-light {
+        @apply border border-gray-50 dark:border-gray-100
+    }
 }
 
 .prose {

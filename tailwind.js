@@ -91,6 +91,11 @@ module.exports = {
                 display: ['Gilroy', 'Inter', ...defaultTheme.fontFamily.sans],
                 mono: ['SFMono-Regular', ...defaultTheme.fontFamily.mono],
             },
+            border: {
+                DEFAULT: theme => ({
+                    DEFAULT: theme('colors.gray.300'),
+                })
+            },
             scale: {
                 1: '.01',
                 101: '1.01',
