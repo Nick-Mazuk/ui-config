@@ -1,7 +1,3 @@
-import aspectRatio from '@tailwindcss/aspect-ratio'
-import forms from '@tailwindcss/forms'
-import lineClamp from '@tailwindcss/line-clamp'
-import typography from '@tailwindcss/typography'
 import defaultTheme from 'tailwindcss/defaultTheme'
 
 import { createTailwindColors } from './create-tailwind-colors'
@@ -141,6 +137,7 @@ export const config = {
             },
         },
     },
-    plugins: [typography, forms, aspectRatio, lineClamp],
+
+    // plugins: [typography, forms, aspectRatio, lineClamp],
     darkMode: 'class',
 }
