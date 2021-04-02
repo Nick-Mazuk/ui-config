@@ -25,6 +25,10 @@
     body {
         @apply bg-background text-gray-900 overflow-x-hidden font-normal;
     }
+
+    #svelte {
+        @apply flex flex-col min-h-screen justify-start;
+    }
 }
 
 @layer utilities {
@@ -82,7 +86,7 @@
     /* other */
 
     .border-light {
-        @apply border-gray-50 dark:border-gray-100
+        @apply border-gray-50 dark:border-gray-100;
     }
 }
 
