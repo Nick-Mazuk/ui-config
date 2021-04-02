@@ -1,5 +1,9 @@
 colors.css
 tailwind-colors.js
+compiled
+dist
+lib
+.Ds_Store
 
 # Logs
 logs

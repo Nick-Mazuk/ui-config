@@ -2,20 +2,21 @@
     "name": "@nick-mazuk/ui-config",
     "version": "0.8.59",
     "description": "> **Note: this package is considered experimental and can change at any time without notice. Updates are not covered by semver until 1.0**",
-    "main": "index.js",
+    "main": "lib/index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "lint": "eslint '**/*.{js,ts,tsx}' --quiet --fix",
-        "build": "node build.js",
+        "eslint": "eslint '**/*.{ts,tsx}' --quiet --fix",
+        "check-types": "tsc --noemit",
+        "lint": "npm run eslint && npm run check-types",
+        "create-tailwind-config": "esbuild src/tailwind.ts --outfile=lib/tailwind.js --bundle --platform=node --target=node12.17",
+        "build": "esbuild src/build-scripts/index.ts --outfile=compiled/build.js --bundle --platform=node --target=node12.17 && node compiled/build.js && npm run create-tailwind-config",
         "prepublish": "npm run build"
     },
     "keywords": [],
     "author": "",
     "license": "MIT",
     "devDependencies": {
-        "autoprefixer": "^10.2.5",
-        "flat": "^5.0.2",
-        "@nick-mazuk/eslint-config": "^0.1.13",
+        "@nick-mazuk/eslint-config": "^0.7.50",
         "@nick-mazuk/tsconfig": "^0.1.1",
         "@tailwindcss/aspect-ratio": "^0.2.0",
         "@tailwindcss/forms": "^0.3.2",
@@ -23,7 +24,15 @@
         "@tailwindcss/line-clamp": "^0.2.0",
         "@tailwindcss/typography": "^0.4.0",
         "@types/flat": "^5.0.1",
-        "eslint": "^7.22.0",
+        "@types/fs-extra": "^9.0.10",
+        "@types/node": "^14.14.37",
+        "@types/tailwindcss": "^2.0.2",
+        "autoprefixer": "^10.2.5",
+        "esbuild": "^0.11.3",
+        "eslint": "^7.23.0",
+        "flat": "^5.0.2",
+        "fs-extra": "^9.1.0",
+        "jest": "^26.6.3",
         "postcss": "^8.2.9",
         "tailwindcss": "^2.0.4",
         "typescript": "^4.2.3"
@@ -39,9 +48,6 @@
     },
     "files": [
         "README.md",
-        "tailwind.js",
-        "colors.css",
-        "styles.css",
-        "colors.js"
+        "lib/*"
     ]
 }

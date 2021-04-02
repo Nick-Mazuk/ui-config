@@ -1,48 +1,22 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+import aspectRatio from '@tailwindcss/aspect-ratio'
+import forms from '@tailwindcss/forms'
+import lineClamp from '@tailwindcss/line-clamp'
+import typography from '@tailwindcss/typography'
+import defaultTheme from 'tailwindcss/defaultTheme'
 
-const getTailwindColor = (color) => {
-    const colorString = 'var(--c-' + color.toLowerCase() + ')'
-    return ({ opacityVariable, opacityValue }) => {
-        if (typeof opacityValue !== 'undefined') return `rgba(${colorString}, ${opacityValue})`
-        if (typeof opacityVariable !== 'undefined')
-            return `rgba(${colorString}, var(${opacityVariable}, 1))`
-        return `rgb(${colorString})`
-    }
-}
+import { createTailwindColors } from './create-tailwind-colors'
 
-const createTailwindColors = (colors) => {
-    const tailwindColors = {}
+type Theme = typeof defaultTheme
 
-    for (const colorGroup in colors) {
-        if (Array.isArray(colors[colorGroup])) {
-            tailwindColors[colorGroup] = getTailwindColor(colorGroup)
-        } else {
-            tailwindColors[colorGroup] = {}
-            for (const colorName in colors[colorGroup]) 
-                tailwindColors[colorGroup][colorName] = getTailwindColor(colorGroup + '-' + colorName)
-        }
-    }
-
-    return tailwindColors
-}
-
-const round = (num) =>
-    num
-        .toFixed(7)
-        .replace(/(\.[0-9]+?)0+$/, '$1')
-        .replace(/\.0$/, '')
-const rem = (px) => `${round(px / 16)}rem`
-const em = (px, base) => `${round(px / base)}em`
-
-module.exports = {
+export const config = {
     theme: {
         colors: {
-            ...createTailwindColors(require('./colors')),
+            ...createTailwindColors(),
             transparent: 'transparent',
             current: 'currentColor',
             background: 'rgb(var(--c-background))',
         },
-        inset: (theme, { negative }) => ({
+        inset: (theme: Theme, { negative }) => ({
             auto: 'auto',
             '1/2': '50%',
             ...theme('spacing'),
@@ -92,9 +66,9 @@ module.exports = {
                 mono: ['SFMono-Regular', ...defaultTheme.fontFamily.mono],
             },
             border: {
-                DEFAULT: theme => ({
+                DEFAULT: (theme) => ({
                     DEFAULT: theme('colors.gray.300'),
-                })
+                }),
             },
             scale: {
                 1: '.01',
@@ -163,15 +137,10 @@ module.exports = {
                 },
             },
             flexShrink: {
-                '1/2': 0.5
-            }
+                '1/2': 0.5,
+            },
         },
     },
-    plugins: [
-        require('@tailwindcss/typography'),
-        require('@tailwindcss/forms'),
-        require('@tailwindcss/aspect-ratio'),
-        require('@tailwindcss/line-clamp'),
-    ],
+    plugins: [typography, forms, aspectRatio, lineClamp],
     darkMode: 'class',
 }

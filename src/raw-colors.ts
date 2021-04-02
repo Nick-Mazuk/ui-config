@@ -1,8 +1,17 @@
-const colors = {
+/* eslint-disable no-magic-numbers -- this file defined the magic numbers */
+export type Color = [number, number, number]
+export type ColorVariants = {
+    [variant: string]: Color
+}
+export type Colors = {
+    [label: string]: Color | ColorVariants
+}
+export type FlattenedColors = { [colorName: string]: Color }
+
+export const colors: Colors = {
     black: [0, 0, 0],
     white: [255, 255, 255],
     link: {
-        // taken from primary 500 and d600
         DEFAULT: [13, 100, 226],
         d: [58, 152, 253],
     },
@@ -177,5 +186,3 @@ const colors = {
         pink: [250, 36, 60],
     },
 }
-
-module.exports = colors
