@@ -88,6 +88,10 @@
     .border-light {
         @apply border-gray-50 dark:border-gray-100;
     }
+    
+    .divide-light {
+        @apply border-gray-50 dark:border-gray-100;
+    }
 }
 
 .prose {
