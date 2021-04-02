@@ -8,7 +8,7 @@
         "eslint": "eslint '**/*.{ts,tsx}' --quiet --fix",
         "check-types": "tsc --noemit",
         "lint": "npm run eslint && npm run check-types",
-        "create-tailwind-config": "esbuild src/tailwind.ts --outfile=lib/tailwind.js --bundle --platform=node --target=node12.17 --external:@tailwindcss/typography --external:@tailwindcss/forms --external:@tailwindcss/line-clamp --external:@tailwindcss/aspect-ratio",
+        "create-tailwind-config": "esbuild src/tailwind.ts --outfile=lib/index.js --bundle --platform=node --target=node12.17 --external:@tailwindcss/typography --external:@tailwindcss/forms --external:@tailwindcss/line-clamp --external:@tailwindcss/aspect-ratio",
         "build": "esbuild src/build-scripts/index.ts --outfile=compiled/build.js --bundle --platform=node --target=node12.17 && node compiled/build.js && npm run create-tailwind-config",
         "prepublish": "npm run build"
     },
