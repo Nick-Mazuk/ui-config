@@ -1,6 +1,6 @@
 import defaultTheme from 'tailwindcss/defaultTheme'
 
-import { createTailwindColors } from './create-tailwind-colors'
+import { createTailwindColors } from './build-scripts/create-tailwind-colors'
 
 type Theme = typeof defaultTheme
 

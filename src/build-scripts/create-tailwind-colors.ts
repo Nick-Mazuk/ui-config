@@ -1,5 +1,5 @@
-import type { ColorVariants } from './raw-colors'
-import { colors } from './raw-colors'
+import type { ColorVariants } from '../raw-colors'
+import { colors } from '../raw-colors'
 
 type ColorFunctionProps = {
     opacityVariable: string
