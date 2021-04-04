@@ -10,13 +10,6 @@
     src: url('https://fonts.nickmazuk.com/inter-variable.woff2') format('woff2');
 }
 
-@font-face {
-    font-family: 'Gilroy';
-    font-style: normal;
-    font-display: swap;
-    src: url('https://fonts.nickmazuk.com/gilroy-semibold.woff2') format('woff2');
-}
-
 @layer base {
     * {
         @apply min-w-0 min-h-0;
@@ -24,6 +17,9 @@
 
     body {
         @apply bg-background text-gray-900 overflow-x-hidden font-normal;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
     }
 
     #svelte {
