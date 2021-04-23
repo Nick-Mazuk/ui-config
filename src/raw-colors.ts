@@ -3,7 +3,7 @@ import { lchToRgb } from './lch-to-rgb'
 
 type ColorValue = 50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900
 
-const lightest = 97
+const lightest = 95
 const darkest = 3
 const increment = (lightest - darkest) / 17
 
@@ -16,7 +16,7 @@ const LIGHTNESS_MAP: Record<ColorValue, number> = {
     500: 8 * increment + darkest,
     600: 6 * increment + darkest,
     700: 4 * increment + darkest,
-    800: 2 *increment + darkest,
+    800: 2 * increment + darkest,
     900: darkest,
 }
 
@@ -50,6 +50,7 @@ const grayLightnesses: Lightness[] = [
     { name: '300', value: 300 },
     { name: '400', value: 400 },
     { name: '500', value: 500 },
+    { name: 'DEFAULT', value: 500 },
     { name: '600', value: 600 },
     { name: '700', value: 700 },
     { name: '800', value: 800 },
