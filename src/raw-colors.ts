@@ -3,7 +3,7 @@ import { lchToRgb } from './lch-to-rgb'
 
 type ColorValue = 50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900
 
-const lightest = 95
+const lightest = 97
 const darkest = 3
 const increment = (lightest - darkest) / 17
 
@@ -43,7 +43,7 @@ const createPaletteItem = (hue: number, chroma: number, lightnesses: Lightness[]
     return output
 }
 
-const grayLightnesses: Lightness[] = [
+const lightnesses: Lightness[] = [
     { name: '50', value: 50 },
     { name: '100', value: 100 },
     { name: '200', value: 200 },
@@ -55,13 +55,6 @@ const grayLightnesses: Lightness[] = [
     { name: '700', value: 700 },
     { name: '800', value: 800 },
     { name: '900', value: 900 },
-]
-const lightnesses: Lightness[] = [
-    { name: 'lightest', value: 50 },
-    { name: 'lighter', value: 100 },
-    { name: 'light', value: 300 },
-    { name: 'DEFAULT', value: 500 },
-    { name: '700', value: 700 },
 ]
 
 export type Color = [number, number, number]
@@ -82,7 +75,7 @@ export const colors: Colors = {
     success: createPaletteItem(134.383, 66.576, lightnesses),
     warning: createPaletteItem(59.816, 103, lightnesses),
     error: createPaletteItem(39.205, 92.083, lightnesses),
-    gray: createPaletteItem(274.157, 6.052, grayLightnesses),
+    gray: createPaletteItem(274.157, 6.052, lightnesses),
     accent: {
         cyan: [17, 213, 239],
         magenta: [191, 64, 162],
