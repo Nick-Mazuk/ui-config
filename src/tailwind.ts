@@ -139,5 +139,6 @@ export const config = {
     },
 
     // plugins: [typography, forms, aspectRatio, lineClamp],
+    mode: 'jit',
     darkMode: 'class',
 }
