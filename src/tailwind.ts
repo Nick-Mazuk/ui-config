@@ -63,7 +63,7 @@ export const config = {
             },
             border: {
                 DEFAULT: (theme) => ({
-                    DEFAULT: theme('colors.gray.200'),
+                    DEFAULT: theme('colors.gray.100'),
                 }),
             },
             scale: {
