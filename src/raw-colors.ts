@@ -73,8 +73,8 @@ export const colors: Colors = {
     primary: createPaletteItem(282.521, 73.61, lightnesses),
     highlight: createPaletteItem(312.636, 90, lightnesses),
     success: createPaletteItem(134.383, 66.576, lightnesses),
-    warning: createPaletteItem(59.816, 103, lightnesses),
-    error: createPaletteItem(48, 101, lightnesses),
+    warning: createPaletteItem(3.794, 80.022, lightnesses),
+    error: createPaletteItem(40.853, 101.398, lightnesses),
     gray: createPaletteItem(274.157, 6.052, lightnesses),
     accent: {
         cyan: [17, 213, 239],
