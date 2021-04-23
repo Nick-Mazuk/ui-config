@@ -3,7 +3,7 @@ import { lchToRgb } from './lch-to-rgb'
 
 type ColorValue = 50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900
 
-const lightest = 95
+const lightest = 97
 const darkest = 3
 const increment = (lightest - darkest) / 17
 
