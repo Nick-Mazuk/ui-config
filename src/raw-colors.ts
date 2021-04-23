@@ -36,7 +36,7 @@ const createPaletteItem = (hue: number, chroma: number, lightnesses: Lightness[]
 
     lightnesses.forEach((lightness) => {
         output[lightness.name] = lchToRgb(LIGHTNESS_MAP[lightness.value], chroma, hue)
-        const darkName = lightness.name === 'DEFAULT' ? 'i' : 'i' + lightness.name
+        const darkName = lightness.name === 'DEFAULT' ? 'i' : `i${lightness.name}`
         output[darkName] = lchToRgb(100 - LIGHTNESS_MAP[lightness.value], chroma, hue)
     })
 
@@ -76,7 +76,7 @@ export type FlattenedColors = { [colorName: string]: Color }
 export const colors: Colors = {
     black: [0, 0, 0],
     white: [255, 255, 255],
-    link: createPaletteItem(282.521, 73.61, [{name: 'DEFAULT', value: 500}]),
+    link: createPaletteItem(282.521, 73.61, [{ name: 'DEFAULT', value: 500 }]),
     primary: createPaletteItem(282.521, 73.61, lightnesses),
     highlight: createPaletteItem(312.636, 79.63, lightnesses),
     success: createPaletteItem(134.383, 66.576, lightnesses),
