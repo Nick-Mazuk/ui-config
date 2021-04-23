@@ -12,10 +12,6 @@ export const config = {
             current: 'currentColor',
             background: 'rgb(var(--c-background))',
         },
-        borderColor: (theme) => ({
-            ...theme('colors'),
-            DEFAULT: theme('colors.gray.100', 'currentColor'),
-        }),
         inset: (theme: Theme, { negative }) => ({
             auto: 'auto',
             '1/2': '50%',
@@ -65,10 +61,9 @@ export const config = {
                 display: ['Gilroy', 'Inter', ...defaultTheme.fontFamily.sans],
                 mono: ['SFMono-Regular', ...defaultTheme.fontFamily.mono],
             },
-            scale: {
-                1: '.01',
-                101: '1.01',
-            },
+            borderColor: (theme) => ({
+                DEFAULT: theme('colors.gray.100'),
+            }),
             maxWidth: {
                 '1/4': '25%',
                 '1/2': '50%',
