@@ -61,7 +61,7 @@ const lightnesses: Lightness[] = [
     { name: 'lighter', value: 100 },
     { name: 'light', value: 300 },
     { name: 'DEFAULT', value: 500 },
-    { name: 'dark', value: 700 },
+    { name: '700', value: 700 },
 ]
 
 export type Color = [number, number, number]
