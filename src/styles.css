@@ -78,16 +78,6 @@
     .link {
         @apply text-semibold no-underline text-link hover:underline;
     }
-
-    /* other */
-
-    .border-light {
-        @apply border-gray-50 dark:border-gray-100;
-    }
-    
-    .divide-light {
-        @apply border-gray-50 dark:border-gray-100;
-    }
 }
 
 .prose {
@@ -110,7 +100,7 @@
     @apply text-highlight;
 }
 .prose pre {
-    @apply bg-gray-50 text-gray-900 bg-opacity-70;
+    @apply bg-gray-50 text-gray-900;
 }
 .prose a,
 .prose.responsive a {
