@@ -61,11 +61,10 @@ export const config = {
                 display: ['Gilroy', 'Inter', ...defaultTheme.fontFamily.sans],
                 mono: ['SFMono-Regular', ...defaultTheme.fontFamily.mono],
             },
-            border: {
-                DEFAULT: (theme) => ({
-                    DEFAULT: theme('colors.gray.100'),
-                }),
-            },
+            borderColor: (theme) => ({
+                DEFAULT: theme('colors.gray.100'),
+            }),
+
             scale: {
                 1: '.01',
                 101: '1.01',
