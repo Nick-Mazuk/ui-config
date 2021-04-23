@@ -62,9 +62,8 @@ export const config = {
                 mono: ['SFMono-Regular', ...defaultTheme.fontFamily.mono],
             },
             borderColor: (theme) => ({
-                DEFAULT: theme('colors.gray.100'),
+                DEFAULT: theme('colors.gray.100', 'currentColor'),
             }),
-
             scale: {
                 1: '.01',
                 101: '1.01',
