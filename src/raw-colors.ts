@@ -75,7 +75,7 @@ export const colors: Colors = {
     success: createPaletteItem(134.383, 66.576, lightnesses),
     warning: createPaletteItem(3.794, 80.022, lightnesses),
     error: createPaletteItem(40.853, 101.398, lightnesses),
-    gray: createPaletteItem(274.157, 6.052, lightnesses),
+    gray: createPaletteItem(282.521, 3, lightnesses),
     accent: {
         cyan: [17, 213, 239],
         magenta: [191, 64, 162],
