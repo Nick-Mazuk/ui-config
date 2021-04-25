@@ -1,17 +1,12 @@
+import aspectRatio from '@tailwindcss/aspect-ratio'
+import forms from '@tailwindcss/forms'
+import lineClamp from '@tailwindcss/line-clamp'
+import typography from '@tailwindcss/typography'
 import defaultTheme from 'tailwindcss/defaultTheme'
 
 import { createTailwindColors } from './build-scripts/create-tailwind-colors'
 
 type Theme = typeof defaultTheme
-
-console.log('RUNNING NEW CONFIG')
-console.log('RUNNING NEW CONFIG')
-console.log('RUNNING NEW CONFIG')
-console.log('RUNNING NEW CONFIG')
-console.log('RUNNING NEW CONFIG')
-console.log('RUNNING NEW CONFIG')
-console.log('RUNNING NEW CONFIG')
-console.log('RUNNING NEW CONFIG')
 
 export const config = {
     theme: {
@@ -157,7 +152,7 @@ export const config = {
         },
     },
 
-    // plugins: [typography, forms, aspectRatio, lineClamp],
+    plugins: [typography, forms, aspectRatio, lineClamp],
     mode: 'jit',
     darkMode: 'class',
 }

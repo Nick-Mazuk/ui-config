@@ -18,7 +18,7 @@ Create a `tailwind.config.js` file if you haven't already. Then add `@nick-mazuk
 
 ```js
 module.exports = {
-    presets: [require('@nick-mazuk/ui-config/tailwind')],
+    presets: [require('@nick-mazuk/ui-config')],
 }
 ```
 

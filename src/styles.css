@@ -51,27 +51,27 @@
     }
     
     .h1 {
-        @apply text-6xl text-bold font-display;
+        @apply text-7xl text-bold font-display;
     }
     
     .h2 {
-        @apply text-5xl text-bold font-display;
+        @apply text-6xl text-bold font-display;
     }
     
     .h3 {
-        @apply text-4xl text-bold font-display;
+        @apply text-5xl text-bold font-display;
     }
     
     .h4 {
-        @apply text-3xl text-bold font-display;
+        @apply text-4xl text-bold font-display;
     }
     
     .h5 {
-        @apply text-2xl text-bold font-display;
+        @apply text-3xl text-bold font-display;
     }
     
     .h6 {
-        @apply text-xl text-bold font-display;
+        @apply text-2xl text-bold font-display;
     }
 
     .link {
