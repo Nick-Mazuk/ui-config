@@ -1,20 +1,18 @@
-# ui-config
-
-> **Note: this package is considered experimental and can change at any time without notice. Updates are not covered by semver until 1.0**
+# UI Config
 
 ## Installation
 
-This configuration relies on TailwindCSS 2.0. So to install, you'll also need to install TailwindCSS and its dependencies.
+This configuration relies on TailwindCSS 2.1. So to install, you'll also need to install TailwindCSS and its dependencies.
 
 ```bash
-    npm install @nick-mazuk/ui-config tailwindcss postcss autoprefixer
+npm install @nick-mazuk/ui-config tailwindcss postcss autoprefixer
 ```
 
 Then, just add the config to your `tailwind.config.js`, `postcss.config.js`, and your global css stylesheet.
 
 ### Tailwind config
 
-Create a `tailwind.config.js` file if you haven't already. Then add `@nick-mazuk/ui-config/tailwind` as a preset.
+Create a `tailwind.config.js` file if you haven't already. Then add `@nick-mazuk/ui-config` as a preset.
 
 ```js
 module.exports = {
@@ -30,47 +28,16 @@ Create a `postcss.config.js` file if you haven't already.
 module.exports = {
     plugins: [
         'tailwindcss',
-        'postcss-flexbugs-fixes',
-        [
-            'postcss-preset-env',
-            {
-                autoprefixer: {
-                    flexbox: 'no-2009',
-                },
-                stage: 3,
-                features: {
-                    'custom-properties': false,
-                },
-            },
-        ],
-        '@nick-mazuk/ui-config/postcss',
         'autoprefixer',
     ],
 }
 ```
 
-### Global css stylesheet
+### Add stylesheet
 
-Add this to your global stylesheet.
+Just import the CSS stylesheets.
 
-```css
-@tailwind base;
-
-/* Write your own custom base styles here */
-
-/* Start purging... */
-@tailwind components;
-/* Stop purging. */
-
-/* layout */
-
-@responsive {
-    .wrapper {
-        @apply w-full max-w-screen-xl px-6 mx-auto;
-    }
-}
-
-/* Start purging... */
-@tailwind utilities;
-/* Stop purging. */
+```ts
+import '@nick-mazuk/ui-config/lib/colors.css'
+import '@nick-mazuk/ui-config/lib/styles.css'
 ```
