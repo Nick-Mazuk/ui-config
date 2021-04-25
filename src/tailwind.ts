@@ -2,17 +2,17 @@ import defaultTheme from 'tailwindcss/defaultTheme'
 
 import { createTailwindColors } from './build-scripts/create-tailwind-colors'
 
-const colors = createTailwindColors()
+type Theme = typeof defaultTheme
 
 export const config = {
     theme: {
         colors: {
-            ...colors,
+            ...createTailwindColors(),
             transparent: 'transparent',
             current: 'currentColor',
             background: 'rgb(var(--c-background))',
         },
-        inset: (theme, { negative }) => ({
+        inset: (theme: Theme, { negative }) => ({
             auto: 'auto',
             '1/2': '50%',
             ...theme('spacing'),
@@ -61,9 +61,9 @@ export const config = {
                 display: ['Gilroy', 'Inter', ...defaultTheme.fontFamily.sans],
                 mono: ['SFMono-Regular', ...defaultTheme.fontFamily.mono],
             },
-            borderColor: {
-                DEFAULT: colors.gray['100'],
-            },
+            borderColor: (theme) => ({
+                DEFAULT: theme('colors.primary.500'),
+            }),
             maxWidth: {
                 '1/4': '25%',
                 '1/2': '50%',
