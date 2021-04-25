@@ -2,8 +2,6 @@ import defaultTheme from 'tailwindcss/defaultTheme'
 
 import { createTailwindColors } from './build-scripts/create-tailwind-colors'
 
-type Theme = typeof defaultTheme
-
 export const config = {
     theme: {
         colors: {
@@ -12,7 +10,7 @@ export const config = {
             current: 'currentColor',
             background: 'rgb(var(--c-background))',
         },
-        inset: (theme: Theme, { negative }) => ({
+        inset: (theme, { negative }) => ({
             auto: 'auto',
             '1/2': '50%',
             ...theme('spacing'),
@@ -62,7 +60,7 @@ export const config = {
                 mono: ['SFMono-Regular', ...defaultTheme.fontFamily.mono],
             },
             borderColor: (theme) => ({
-                DEFAULT: theme('colors.gray[100]'),
+                DEFAULT: theme('colors.gray.100', 'currentColor'),
             }),
             maxWidth: {
                 '1/4': '25%',
