@@ -2,10 +2,12 @@ import defaultTheme from 'tailwindcss/defaultTheme'
 
 import { createTailwindColors } from './build-scripts/create-tailwind-colors'
 
+const colors = createTailwindColors()
+
 export const config = {
     theme: {
         colors: {
-            ...createTailwindColors(),
+            ...colors,
             transparent: 'transparent',
             current: 'currentColor',
             background: 'rgb(var(--c-background))',
@@ -59,9 +61,9 @@ export const config = {
                 display: ['Gilroy', 'Inter', ...defaultTheme.fontFamily.sans],
                 mono: ['SFMono-Regular', ...defaultTheme.fontFamily.mono],
             },
-            borderColor: (theme) => ({
-                DEFAULT: theme('colors.gray.100', 'currentColor'),
-            }),
+            borderColor: {
+                DEFAULT: colors.gray['100'],
+            },
             maxWidth: {
                 '1/4': '25%',
                 '1/2': '50%',
