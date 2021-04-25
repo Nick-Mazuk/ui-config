@@ -4,6 +4,15 @@ import { createTailwindColors } from './build-scripts/create-tailwind-colors'
 
 type Theme = typeof defaultTheme
 
+console.log('RUNNING NEW CONFIG')
+console.log('RUNNING NEW CONFIG')
+console.log('RUNNING NEW CONFIG')
+console.log('RUNNING NEW CONFIG')
+console.log('RUNNING NEW CONFIG')
+console.log('RUNNING NEW CONFIG')
+console.log('RUNNING NEW CONFIG')
+console.log('RUNNING NEW CONFIG')
+
 export const config = {
     theme: {
         colors: {
