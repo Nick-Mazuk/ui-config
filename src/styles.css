@@ -101,8 +101,8 @@
 .prose pre {
     @apply bg-gray-50 text-gray-900;
 }
-.prose a,
-.prose.responsive a {
+.prose a
+{
     @apply link;
 }
 .prose img {
