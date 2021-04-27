@@ -16,7 +16,7 @@
     }
 
     body {
-        @apply bg-background text-gray-900 overflow-x-hidden font-normal text-base;
+        @apply bg-background text-foreground overflow-x-hidden font-normal text-base;
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;

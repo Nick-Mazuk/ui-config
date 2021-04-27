@@ -7,7 +7,7 @@ import { colors } from '../raw-colors'
 const getColorDarkName = (colorName: string) => {
     const colorNameParts = colorName.split('-')
     const lastNamePart = colorNameParts[colorNameParts.length - 1]
-    if (lastNamePart === 'i') colorNameParts[colorNameParts.length - 1] = 'default'
+    if (lastNamePart === 'i') colorNameParts.pop()
     else if (lastNamePart === 'default') colorNameParts[colorNameParts.length - 1] = 'i'
     else if (lastNamePart.match(/^i/u))
         colorNameParts[colorNameParts.length - 1] = lastNamePart.replace('i', '')
