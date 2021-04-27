@@ -81,9 +81,6 @@ export const config = {
                 display: ['Gilroy', 'Inter', ...defaultTheme.fontFamily.sans],
                 mono: ['SFMono-Regular', ...defaultTheme.fontFamily.mono],
             },
-            borderColor: (theme) => ({
-                DEFAULT: theme('colors.gray.100', 'currentColor'),
-            }),
             maxWidth: {
                 '1/4': '25%',
                 '1/2': '50%',

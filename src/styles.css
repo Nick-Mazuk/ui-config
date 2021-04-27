@@ -80,7 +80,7 @@
 }
 
 .prose {
-    @apply text-gray-900;
+    @apply text-foreground;
 }
 
 .prose h1 {
@@ -99,7 +99,7 @@
     @apply text-highlight;
 }
 .prose pre {
-    @apply bg-gray-50 text-gray-900;
+    @apply bg-gray-100 text-foreground;
 }
 .prose a
 {
