@@ -31,56 +31,38 @@
     .wrapper {
         @apply mx-auto px-6 max-w-screen-lg;
     }
-
-    /* TEXT */
-
-    .text-bold {
-        @apply font-semibold;
-    }
-    
-    .text-semibold {
-        @apply font-medium;
-    }
-    
-    .text-black {
-        @apply font-bold;
-    }
     
     .text-uppercase {
-        @apply uppercase text-semibold;
+        @apply uppercase font-semibold;
     }
     
     .h1 {
-        @apply text-7xl text-bold font-display;
+        @apply text-7xl font-bold font-display;
     }
     
     .h2 {
-        @apply text-6xl text-bold font-display;
+        @apply text-6xl font-bold font-display;
     }
     
     .h3 {
-        @apply text-5xl text-bold font-display;
+        @apply text-5xl font-bold font-display;
     }
     
     .h4 {
-        @apply text-4xl text-bold font-display;
+        @apply text-4xl font-bold font-display;
     }
     
     .h5 {
-        @apply text-3xl text-bold font-display;
+        @apply text-3xl font-bold font-display;
     }
     
     .h6 {
-        @apply text-2xl text-bold font-display;
+        @apply text-2xl font-bold font-display;
     }
 
     .link {
-        @apply text-semibold no-underline text-link hover:underline;
+        @apply font-semibold no-underline text-link hover:underline;
     }
-}
-
-.prose {
-    @apply text-foreground;
 }
 
 .prose h1 {
@@ -111,7 +93,6 @@
 .prose blockquote {
     @apply not-italic;
 }
-
 :target {
     scroll-margin-top: 96px;
 }

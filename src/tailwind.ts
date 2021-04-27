@@ -48,11 +48,10 @@ export const config = {
             extralight: 'calc(200 * var(--font-weight-multiplier, 1))',
             light: 'calc(300 * var(--font-weight-multiplier, 1))',
             normal: 'calc(400 * var(--font-weight-multiplier, 1))',
-            medium: 'calc(500 * var(--font-weight-multiplier, 1))',
-            semibold: 'calc(600 * var(--font-weight-multiplier, 1))',
-            bold: 'calc(700 * var(--font-weight-multiplier, 1))',
-            extrabold: 'calc(800 * var(--font-weight-multiplier, 1))',
-            black: 'calc(900 * var(--font-weight-multiplier, 1))',
+            semibold: 'calc(500 * var(--font-weight-multiplier, 1))',
+            bold: 'calc(600 * var(--font-weight-multiplier, 1))',
+            extrabold: 'calc(700 * var(--font-weight-multiplier, 1))',
+            black: 'calc(800 * var(--font-weight-multiplier, 1))',
         },
         boxShadow: {
             xs: '0 0 0 1px rgba(var(--c-shadow), var(--shadow-opacity, 0.05))',
@@ -146,6 +145,33 @@ export const config = {
             flexShrink: {
                 '1/2': 0.5,
             },
+            typeography: (theme) => ({
+                DEFAULT: {
+                    css: {
+                        color: theme('colors.foreground'),
+                        a: {
+                            color: theme('colors.link'),
+                            textDecoration: 'none',
+                            fontWeight: theme('fontWeight.semibold'),
+                            '&:hover': {
+                                textDecoration: 'underline',
+                            },
+                        },
+                        strong: {
+                            color: theme('colors.foreground'),
+                            fontWeight: theme('fontWeight.bold'),
+                        },
+                        'ol > li::before': {
+                            fontWeight: theme('fontWeight.normal'),
+                            color: theme('colors.foreground', defaultTheme.colors.gray[500]),
+                        },
+                        pre: {
+                            backgroundColor: theme('colors.gray.100'),
+                            color: theme('colors.foreground'),
+                        },
+                    },
+                },
+            }),
         },
     },
 
