@@ -1,3 +1,4 @@
+/* eslint-disable max-lines-per-function -- just defining things */
 import aspectRatio from '@tailwindcss/aspect-ratio'
 import forms from '@tailwindcss/forms'
 import lineClamp from '@tailwindcss/line-clamp'
@@ -145,12 +146,10 @@ export const config = {
             flexShrink: {
                 '1/2': 0.5,
             },
-            typeography: (theme) => ({
+            typography: (theme) => ({
                 DEFAULT: {
                     css: {
-                        color: theme('colors.foreground'),
                         a: {
-                            color: theme('colors.link'),
                             textDecoration: 'none',
                             fontWeight: theme('fontWeight.semibold'),
                             '&:hover': {
@@ -158,16 +157,53 @@ export const config = {
                             },
                         },
                         strong: {
-                            color: theme('colors.foreground'),
                             fontWeight: theme('fontWeight.bold'),
+                        },
+                        ol: {
+                            paddingLeft: theme('padding.10'),
+                        },
+                        ul: {
+                            paddingLeft: theme('padding.10'),
+                        },
+                        'ol > li': {
+                            paddingLeft: '0px',
+                        },
+                        'ul > li': {
+                            paddingLeft: '0px',
                         },
                         'ol > li::before': {
                             fontWeight: theme('fontWeight.normal'),
-                            color: theme('colors.foreground', defaultTheme.colors.gray[500]),
+                            marginLeft: '-25px',
                         },
-                        pre: {
-                            backgroundColor: theme('colors.gray.100'),
-                            color: theme('colors.foreground'),
+                        'ul > li::before': {
+                            content: '"-"',
+                            position: 'absolute',
+                            borderRadius: '50%',
+                            marginLeft: '-25px',
+                            width: '0px',
+                            top: '0px',
+                            left: '0px',
+                            background: 'none',
+                        },
+                        blockquote: {
+                            fontStyle: '',
+                            paddingLeft: theme('padding.9'),
+                            borderLeftWidth: theme('spacing.1'),
+                        },
+                        img: {
+                            borderRadius: theme('rounded.lg'),
+                        },
+                        h2: {
+                            marginTop: '2em',
+                            marginBottom: '1em',
+                        },
+                        h3: {
+                            marginTop: '2em',
+                            marginBottom: '1em',
+                        },
+                        h4: {
+                            marginTop: '2em',
+                            marginBottom: '1em',
                         },
                     },
                 },
@@ -175,7 +211,7 @@ export const config = {
         },
     },
 
-    plugins: [typography, forms, aspectRatio, lineClamp],
+    plugins: [typography({ modifiers: [] }), forms, aspectRatio, lineClamp],
     mode: 'jit',
     darkMode: 'class',
 }

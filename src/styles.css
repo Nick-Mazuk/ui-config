@@ -77,22 +77,38 @@
 .prose h4 {
     @apply h6;
 }
+
+/* move colors to tailwind.ts when issue is resolved -- https://github.com/tailwindlabs/tailwindcss-typography/issues/143 */
+.prose {
+    @apply text-foreground;
+}
+.prose a {
+    @apply link;
+}
+.prose strong {
+    @apply text-foreground;
+}
 .prose code {
     @apply text-highlight;
 }
+.prose ol > li::before {
+    @apply text-foreground;
+}
 .prose pre {
-    @apply bg-gray-100 text-foreground;
-}
-.prose a
-{
-    @apply link;
-}
-.prose img {
-    @apply rounded-lg;
+    @apply text-foreground bg-gray-100;
 }
 .prose blockquote {
-    @apply not-italic;
+    @apply text-foreground;
 }
+.prose a {
+    @apply text-link;
+}
+.prose a code {
+    @apply text-link;
+}
+
+/* end move to tailwind.ts */
+
 :target {
     scroll-margin-top: 96px;
 }
