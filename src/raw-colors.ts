@@ -1,35 +1,110 @@
 /* eslint-disable no-magic-numbers -- this file defined the magic numbers */
+import Color from 'ac-colors'
+
 import { lchToRgb } from './lch-to-rgb'
 
 type Lightness = 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | 'DEFAULT'
 
-const LIGHTNESS_MAP: Record<Lightness, number> = {
-    100: 98.272,
-    200: 92.698,
-    300: 66.374,
-    400: 57.258,
-    500: 48.323,
-    DEFAULT: 48.323,
-    600: 39.297,
-    700: 30.272,
-    800: 21.247,
-    900: 5.063,
+type Contrast = {
+    lightness: number
+    min: number
+    max: number
+}
+
+// lightness is ideal LCH lightness. Min/max are real-world RGB contrast ratios from white.
+const LIGHTNESS_MAP: Record<Lightness, Contrast> = {
+    100: {
+        lightness: 98.272,
+        min: 1.03,
+        max: 1.05,
+    },
+    200: {
+        lightness: 92.698,
+        min: 1.19,
+        max: 1.21,
+    },
+    300: {
+        lightness: 66.374,
+        min: 2.57,
+        max: 2.6,
+    },
+    400: {
+        lightness: 57.258,
+        min: 3.46,
+        max: 3.5,
+    },
+    500: {
+        lightness: 48.323,
+        min: 4.55,
+        max: 4.61,
+    },
+    DEFAULT: {
+        lightness: 48.323,
+        min: 4.55,
+        max: 4.61,
+    },
+    600: {
+        lightness: 39.297,
+        min: 6.57,
+        max: 6.68,
+    },
+    700: {
+        lightness: 30.272,
+        min: 9.15,
+        max: 9.3,
+    },
+    800: {
+        lightness: 21.247,
+        min: 12.46,
+        max: 12.66,
+    },
+    900: {
+        lightness: 5.063,
+        min: 18.78,
+        max: 18.95,
+    },
 }
 
 type PaletteItem = {
     [value: string]: [number, number, number]
 }
 
+const getColorContrast = (rgb: [number, number, number]): number => {
+    const white = new Color({ color: [255, 255, 255] })
+    const color = new Color({ color: rgb })
+    return Color.contrastRatio(white, color)
+}
+
 const createPaletteItem = (hue: number, chroma: number, lightnesses: Lightness[]): PaletteItem => {
     const output: PaletteItem = {}
+    let outOfBoundsTimes = 0
 
     lightnesses.forEach((lightness) => {
-        output[lightness] = lchToRgb(LIGHTNESS_MAP[lightness], chroma, hue)
-        const darkName = lightness === 'DEFAULT' ? 'i' : `i${lightness}`
-        const darkLightness: Lightness =
-            lightness === 'DEFAULT' ? 'DEFAULT' : ((1000 - lightness) as Lightness)
-        output[darkName] = lchToRgb(LIGHTNESS_MAP[darkLightness], chroma, hue)
+        let adjustedLightness = LIGHTNESS_MAP[lightness].lightness
+        const { min, max } = LIGHTNESS_MAP[lightness]
+        if (!min || !max) return
+        let currentColor = lchToRgb(adjustedLightness, chroma, hue)
+        let currentContrast = getColorContrast(currentColor)
+
+        while (currentContrast <= min || currentContrast >= max) {
+            outOfBoundsTimes++
+
+            if (currentContrast <= min) adjustedLightness -= 0.1
+            else adjustedLightness += 0.1
+
+            currentColor = lchToRgb(adjustedLightness, chroma, hue)
+            currentContrast = getColorContrast(currentColor)
+        }
+
+        output[lightness] = currentColor
     })
+
+    Object.keys(output).forEach((name) => {
+        const darkName = name === 'DEFAULT' ? 'i' : `i${1000 - parseInt(name)}`
+        output[darkName] = output[name]
+    })
+
+    console.log(outOfBoundsTimes)
 
     return output
 }
