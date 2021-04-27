@@ -1,6 +1,6 @@
 {
     "name": "@nick-mazuk/ui-config",
-    "version": "0.10.25",
+    "version": "0.10.26",
     "description": "> **Note: this package is considered experimental and can change at any time without notice. Updates are not covered by semver until 1.0**",
     "main": "lib/index.js",
     "scripts": {
