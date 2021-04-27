@@ -27,7 +27,7 @@ const lightest = 98
 const darkest = 3
 const increment = (lightest - darkest) / 17
 
-const lightestInverted = 21
+const lightestInverted = 22
 const darkestInverted = 95
 const incrementInverted = (lightestInverted - darkestInverted) / 8
 
@@ -43,7 +43,7 @@ const LIGHTNESS_MAP: Record<ColorValue, number> = {
     800: 2 * increment + darkest,
     900: darkest,
     i50: 5,
-    i100: 21,
+    i100: lightestInverted,
     i200: 7 * incrementInverted + darkestInverted,
     i300: 6 * incrementInverted + darkestInverted,
     i400: 5 * incrementInverted + darkestInverted,
@@ -112,7 +112,10 @@ export type FlattenedColors = { [colorName: string]: Color }
 export const colors: Colors = {
     black: [0, 0, 0],
     white: [255, 255, 255],
-    link: createPaletteItem(282.521, 73.61, [{ name: 'DEFAULT', value: 500 }]),
+    link: createPaletteItem(282.521, 73.61, [
+        { name: 'DEFAULT', value: 500 },
+        { name: 'i', value: 'i500' },
+    ]),
     primary: createPaletteItem(282.521, 73.61, lightnesses),
     highlight: createPaletteItem(312.636, 90, lightnesses),
     success: createPaletteItem(134.383, 66.576, lightnesses),
