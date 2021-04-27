@@ -9,8 +9,6 @@ const getColorDarkName = (colorName: string) => {
     const lastNamePart = colorNameParts[colorNameParts.length - 1]
     if (lastNamePart === 'i') colorNameParts[colorNameParts.length - 1] = 'default'
     else if (lastNamePart === 'default') colorNameParts[colorNameParts.length - 1] = 'i'
-    else if (lastNamePart === 'white') colorNameParts[colorNameParts.length - 1] = 'black'
-    else if (lastNamePart === 'black') colorNameParts[colorNameParts.length - 1] = 'white'
     else if (lastNamePart.match(/^i/u))
         colorNameParts[colorNameParts.length - 1] = lastNamePart.replace('i', '')
     else colorNameParts[colorNameParts.length - 1] = `i${lastNamePart}`
@@ -23,16 +21,13 @@ const createColorDefinition = (name: string, value: string) => {
 
 const getDerivedLightColors = () => {
     let output = ''
-    output += createColorDefinition('shadow', 'var(--c-gray-900)')
-    output += createColorDefinition('background', '255, 255, 255')
+    output += createColorDefinition('shadow', 'var(--c-foreground)')
     return output
 }
 
 const getDerivedDarkColors = () => {
     let output = ''
-    output += createColorDefinition('shadow', '0,0,0')
-    output += createColorDefinition('background', 'var(--c-white)')
-    output += '--shadow-opacity: 1;'
+    output += '--shadow-opacity: 0;'
     output += '--font-weight-multiplier: 0.93;'
     return output
 }
@@ -50,7 +45,7 @@ export const createColorsCss = (): void => {
         if (Object.prototype.hasOwnProperty.call(flattenedColors, color)) {
             const colorName = color.toLowerCase()
             const values = flattenedColors[color].join(', ')
-            lightColors += createColorDefinition(colorName, values)
+            lightColors += createColorDefinition(colorName.replace('-default', ''), values)
             darkColors += createColorDefinition(getColorDarkName(colorName), values)
         }
     }

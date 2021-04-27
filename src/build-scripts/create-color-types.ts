@@ -32,7 +32,10 @@ const createColorsMap = (flattenedColors: string[], flattenedCssColors: string[]
     return `
 export const colorsMap = {
 ${flattenedColors
-    .map((color, index) => `    '${color}': '--c-${flattenedCssColors[index]}',`)
+    .map(
+        (color, index) =>
+            `    '${color}': '--c-${flattenedCssColors[index].replace('-default', '')}',`
+    )
     .join('\n')}
 } as const
     `

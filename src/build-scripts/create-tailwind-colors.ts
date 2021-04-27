@@ -16,7 +16,7 @@ type TailwindColorsObject = {
 }
 
 const getTailwindColor = (color: string): ColorFunction => {
-    const colorString = `var(--c-${color.toLowerCase()})`
+    const colorString = `var(--c-${color.toLowerCase().replace('-default', '')})`
     return ({ opacityVariable, opacityValue }) => {
         if (typeof opacityValue !== 'undefined') return `rgba(${colorString}, ${opacityValue})`
         if (typeof opacityVariable !== 'undefined')
