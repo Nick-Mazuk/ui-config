@@ -1,11 +1,35 @@
 /* eslint-disable no-magic-numbers -- this file defined the magic numbers */
 import { lchToRgb } from './lch-to-rgb'
 
-type ColorValue = 50 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900
+type ColorValue =
+    | 50
+    | 100
+    | 200
+    | 300
+    | 400
+    | 500
+    | 600
+    | 700
+    | 800
+    | 900
+    | 'i50'
+    | 'i100'
+    | 'i200'
+    | 'i300'
+    | 'i400'
+    | 'i500'
+    | 'i600'
+    | 'i700'
+    | 'i800'
+    | 'i900'
 
 const lightest = 98
 const darkest = 3
 const increment = (lightest - darkest) / 17
+
+const lightestInverted = 21
+const darkestInverted = 95
+const incrementInverted = (lightestInverted - darkestInverted) / 8
 
 const LIGHTNESS_MAP: Record<ColorValue, number> = {
     50: lightest,
@@ -18,6 +42,16 @@ const LIGHTNESS_MAP: Record<ColorValue, number> = {
     700: 4 * increment + darkest,
     800: 2 * increment + darkest,
     900: darkest,
+    i50: 5,
+    i100: 21,
+    i200: 7 * incrementInverted + darkestInverted,
+    i300: 6 * incrementInverted + darkestInverted,
+    i400: 5 * incrementInverted + darkestInverted,
+    i500: 4 * incrementInverted + darkestInverted,
+    i600: 3 * incrementInverted + darkestInverted,
+    i700: 2 * incrementInverted + darkestInverted,
+    i800: incrementInverted + darkestInverted,
+    i900: darkestInverted,
 }
 
 // console.log(rgb2lch(216, 0, 11));
@@ -36,8 +70,6 @@ const createPaletteItem = (hue: number, chroma: number, lightnesses: Lightness[]
 
     lightnesses.forEach((lightness) => {
         output[lightness.name] = lchToRgb(LIGHTNESS_MAP[lightness.value], chroma, hue)
-        const darkName = lightness.name === 'DEFAULT' ? 'i' : `i${lightness.name}`
-        output[darkName] = lchToRgb(100 - LIGHTNESS_MAP[lightness.value], chroma, hue)
     })
 
     return output
@@ -55,6 +87,17 @@ const lightnesses: Lightness[] = [
     { name: '700', value: 700 },
     { name: '800', value: 800 },
     { name: '900', value: 900 },
+    { name: 'i50', value: 'i50' },
+    { name: 'i100', value: 'i100' },
+    { name: 'i200', value: 'i200' },
+    { name: 'i300', value: 'i300' },
+    { name: 'i400', value: 'i400' },
+    { name: 'i500', value: 'i500' },
+    { name: 'i', value: 'i500' },
+    { name: 'i600', value: 'i600' },
+    { name: 'i700', value: 'i700' },
+    { name: 'i800', value: 'i800' },
+    { name: 'i900', value: 'i900' },
 ]
 
 export type Color = [number, number, number]
