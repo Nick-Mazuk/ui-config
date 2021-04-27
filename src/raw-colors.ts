@@ -77,7 +77,6 @@ const getColorContrast = (rgb: [number, number, number]): number => {
 
 const createPaletteItem = (hue: number, chroma: number, lightnesses: Lightness[]): PaletteItem => {
     const output: PaletteItem = {}
-    let outOfBoundsTimes = 0
 
     lightnesses.forEach((lightness) => {
         let adjustedLightness = LIGHTNESS_MAP[lightness].lightness
@@ -87,8 +86,6 @@ const createPaletteItem = (hue: number, chroma: number, lightnesses: Lightness[]
         let currentContrast = getColorContrast(currentColor)
 
         while (currentContrast <= min || currentContrast >= max) {
-            outOfBoundsTimes++
-
             if (currentContrast <= min) adjustedLightness -= 0.1
             else adjustedLightness += 0.1
 
@@ -103,8 +100,6 @@ const createPaletteItem = (hue: number, chroma: number, lightnesses: Lightness[]
         const darkName = name === 'DEFAULT' ? 'i' : `i${1000 - parseInt(name)}`
         output[darkName] = output[name]
     })
-
-    console.log(outOfBoundsTimes)
 
     return output
 }
