@@ -5,8 +5,7 @@ import { createColorsCss } from './create-colors-css'
 import { createCss } from './create-css'
 
 fs.ensureDirSync('lib')
-console.time('colors')
+
 createColorsCss()
 createColorTypes()
 createCss()
-console.timeEnd('colors')

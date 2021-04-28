@@ -1,5 +1,5 @@
 /* eslint-disable no-magic-numbers -- this file defined the magic numbers */
-import Color from 'ac-colors'
+import AcColor from 'ac-colors'
 
 import { lchToRgb } from './lch-to-rgb'
 
@@ -70,28 +70,47 @@ type PaletteItem = {
 }
 
 const getColorContrast = (rgb: [number, number, number]): number => {
-    const white = new Color({ color: [255, 255, 255] })
-    const color = new Color({ color: rgb })
-    return Color.contrastRatio(white, color)
+    const white = new AcColor({ color: [255, 255, 255] })
+    const color = new AcColor({ color: rgb })
+    return AcColor.contrastRatio(white, color)
 }
 
-const createPaletteItem = (hue: number, chroma: number, lightnesses: Lightness[]): PaletteItem => {
+const getLchFromColorStops = (colorStops: AcColor[], lightness: number): AcColor => {
+    if (colorStops.length === 1) return colorStops[0]
+    if (lightness < colorStops[0].lchab[0]) return colorStops[0]
+    if (lightness > colorStops[colorStops.length - 1].lchab[0])
+        return colorStops[colorStops.length - 1]
+    for (let index = 0; index < colorStops.length; index++) {
+        // eslint-disable-next-line no-continue -- just easier
+        if (lightness > colorStops[index + 1].lchab[0]) continue
+        const weight =
+            (lightness - colorStops[index].lchab[0]) /
+            (colorStops[index + 1].lchab[0] - colorStops[index].lchab[0])
+        return AcColor.blend(colorStops[index], colorStops[index + 1], 'lchab', weight)
+    }
+    return colorStops[colorStops.length - 1]
+}
+
+const createPaletteItem = (colorStops: AcColor[], lightnesses: Lightness[]): PaletteItem => {
     const output: PaletteItem = {}
+    const sortedColorStops = colorStops.sort((a, b) => {
+        return a.lchab[0] < b.lchab[0] ? -1 : 1
+    })
 
     lightnesses.forEach((lightness) => {
         let adjustedLightness = LIGHTNESS_MAP[lightness].lightness
         const { min, max } = LIGHTNESS_MAP[lightness]
         if (!min || !max) return
-        let currentColor = lchToRgb(adjustedLightness, chroma, hue)
-        let currentContrast = getColorContrast(currentColor)
+        let currentColor: [number, number, number] = [0, 0, 0]
+        let currentContrast = 0
 
-        while (currentContrast <= min || currentContrast >= max) {
+        do {
+            const initialColor = getLchFromColorStops(sortedColorStops, adjustedLightness).lchab
+            currentColor = lchToRgb(adjustedLightness, initialColor[1], initialColor[2])
+            currentContrast = getColorContrast(currentColor)
             if (currentContrast <= min) adjustedLightness -= 0.1
             else adjustedLightness += 0.1
-
-            currentColor = lchToRgb(adjustedLightness, chroma, hue)
-            currentContrast = getColorContrast(currentColor)
-        }
+        } while (currentContrast <= min || currentContrast >= max)
 
         output[lightness] = currentColor
     })
@@ -124,13 +143,37 @@ export const colors: Colors = {
         DEFAULT: [255, 255, 255],
         i: [0, 0, 0],
     },
-    link: createPaletteItem(282.521, 73.61, ['DEFAULT']),
-    primary: createPaletteItem(282.521, 73.61, lightnesses),
-    highlight: createPaletteItem(312.636, 90, lightnesses),
-    success: createPaletteItem(134.383, 66.576, lightnesses),
-    warning: createPaletteItem(3.794, 80.022, lightnesses),
-    error: createPaletteItem(40.853, 101.398, lightnesses),
-    gray: createPaletteItem(282.521, 0, lightnesses),
+    link: createPaletteItem(
+        [new AcColor({ color: [48.323, 73.61, 282.521], type: 'lchab' })],
+        ['DEFAULT']
+    ),
+    primary: createPaletteItem(
+        [
+            new AcColor({ color: [48.323, 73.61, 282.521], type: 'lchab' }),
+            new AcColor({ color: [179, 213, 248], type: 'rgb' }),
+        ],
+        lightnesses
+    ),
+    highlight: createPaletteItem(
+        [new AcColor({ color: [48.323, 90, 312.636], type: 'lchab' })],
+        lightnesses
+    ),
+    success: createPaletteItem(
+        [new AcColor({ color: [48.323, 66.576, 134.383], type: 'lchab' })],
+        lightnesses
+    ),
+    warning: createPaletteItem(
+        [new AcColor({ color: [48.323, 80.022, 3.794], type: 'lchab' })],
+        lightnesses
+    ),
+    error: createPaletteItem(
+        [new AcColor({ color: [48.323, 101.398, 40.853], type: 'lchab' })],
+        lightnesses
+    ),
+    gray: createPaletteItem(
+        [new AcColor({ color: [48.323, 0, 282.521], type: 'lchab' })],
+        lightnesses
+    ),
     accent: {
         cyan: [17, 213, 239],
         magenta: [191, 64, 162],
