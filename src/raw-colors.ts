@@ -150,6 +150,7 @@ export const colors: Colors = {
     primary: createPaletteItem(
         [
             new AcColor({ color: [48.323, 73.61, 282.521], type: 'lchab' }),
+            new AcColor({ color: [60, 73.61, 282.521], type: 'lchab' }),
             new AcColor({ color: [179, 213, 248], type: 'rgb' }),
         ],
         lightnesses
@@ -159,7 +160,11 @@ export const colors: Colors = {
         lightnesses
     ),
     success: createPaletteItem(
-        [new AcColor({ color: [48.323, 66.576, 134.383], type: 'lchab' })],
+        [
+            new AcColor({ color: [48.323, 66.576, 134.383], type: 'lchab' }),
+            new AcColor({ color: [60, 66.576, 134.383], type: 'lchab' }),
+            new AcColor({ color: [92, 40, 134.383], type: 'lchab' }),
+        ],
         lightnesses
     ),
     warning: createPaletteItem(
