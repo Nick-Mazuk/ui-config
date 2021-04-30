@@ -13,7 +13,12 @@ const getFlattenedCssColors = () => {
 
     const cssColors: FlattenedColors = {}
     Object.keys(flattenedColors).forEach((name) => {
-        cssColors[name] = flattenedColors[name]
+        const newName = name
+            .toLowerCase()
+            .split('-')
+            .filter((part) => part !== 'default')
+            .join('-')
+        cssColors[newName] = flattenedColors[name]
     })
     return cssColors
 }
