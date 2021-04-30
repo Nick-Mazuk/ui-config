@@ -53,7 +53,7 @@ ${flattenedColors
 const createColorsRgbMap = (flattenedColors: string[], colorValues: FlattenedColors): string => {
     return `
 export const colorsRgbMap = {
-${flattenedColors.map((color) => `    '${color}': '${colorValues[color].join(', ')}',`).join('\n')}
+${flattenedColors.map((color) => `    '${color}': [${colorValues[color].join(', ')}],`).join('\n')}
 } as const`
 }
 
