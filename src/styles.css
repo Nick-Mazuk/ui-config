@@ -29,7 +29,7 @@
 
 @layer utilities {
     .wrapper {
-        @apply mx-auto px-6 max-w-screen-lg;
+        @apply mx-auto px-6 max-w-screen-lg w-full;
     }
     
     .text-uppercase {
