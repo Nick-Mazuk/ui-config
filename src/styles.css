@@ -63,6 +63,10 @@
     .link {
         @apply font-semibold no-underline text-link hover:underline;
     }
+
+    .focus-ring {
+        @apply ring-transparent transition ring-offset-2 focus:outline-none focus:ring-2 focus:ring-gray active:!ring-0 hover:!ring-0;
+    }
 }
 
 .prose h1 {
