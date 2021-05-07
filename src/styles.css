@@ -69,7 +69,7 @@
     }
 
     .input-wrapper {
-        @apply group bg-background w-full border rounded overflow-hidden border-gray-300 hover:border-foreground focus-within:!border-primary ring-gray hover:ring-foreground focus-within:!ring-primary focus-within:ring-1 transition
+        @apply group bg-background w-full border rounded overflow-hidden border-gray-300 hover:border-foreground focus-within:!border-primary ring-gray hover:ring-foreground focus-within:!ring-primary focus-within:ring-1 transition;
     }
 }
 
