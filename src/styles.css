@@ -67,6 +67,10 @@
     .focus-ring {
         @apply ring-transparent transition ring-offset-2 focus:outline-none focus:ring-2 focus:ring-gray active:!ring-0 hover:!ring-0;
     }
+
+    .input-wrapper {
+        @apply group bg-background w-full border rounded overflow-hidden border-gray-300 hover:border-foreground focus-within:!border-primary ring-gray hover:ring-foreground focus-within:!ring-primary focus-within:ring-1 transition
+    }
 }
 
 .prose h1 {
