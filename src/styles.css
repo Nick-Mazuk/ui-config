@@ -69,11 +69,23 @@
     }
 
     .input-wrapper {
-        @apply bg-background w-full border rounded overflow-hidden border-gray-300 hover:border-foreground focus-within:border-primary hover:focus-within:border-primary ring-gray hover:ring-foreground focus-within:ring-primary hover:focus-within:ring-primary focus-within:ring-1 transition;
+        @apply bg-background w-full border rounded overflow-hidden transition;
+    }
+
+    .input-wrapper-active {
+        @apply border-gray-300 hover:border-foreground focus-within:border-primary hover:focus-within:border-primary ring-gray hover:ring-foreground focus-within:ring-primary hover:focus-within:ring-primary;
     }
 
     .input-wrapper-error {
-        @apply ring-error border-error hover:ring-error hover:border-error focus-within:ring-error focus-within:border-error focus-within:hover:ring-error focus-within:hover:border-error;
+        @apply ring-error border-error focus-within:ring-1;
+    }
+
+    .input-wrapper-disabled {
+        @apply cursor-not-allowed border-gray-200 bg-gray-100;
+    }
+
+    .input-wrapper-readonly {
+        @apply cursor-default border-gray-300;
     }
 }
 
