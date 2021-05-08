@@ -73,7 +73,7 @@
     }
 
     .input-wrapper-active {
-        @apply border-gray-300 hover:border-foreground focus-within:border-primary hover:focus-within:border-primary ring-gray hover:ring-foreground focus-within:ring-primary hover:focus-within:ring-primary;
+        @apply border-gray-300 hover:border-foreground focus-within:border-primary hover:focus-within:border-primary ring-gray hover:ring-foreground focus-within:ring-primary hover:focus-within:ring-primary focus-within:ring-1;
     }
 
     .input-wrapper-error {
