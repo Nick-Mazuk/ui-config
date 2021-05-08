@@ -73,7 +73,7 @@
     }
 
     .input-wrapper-error {
-        @apply ring-error border-error hover:ring-error hover:border-error focus-within:hover:ring-error focus-within:hover:border-error;
+        @apply ring-error border-error hover:ring-error hover:border-error focus-within:ring-error focus-within:border-error focus-within:hover:ring-error focus-within:hover:border-error;
     }
 }
 
