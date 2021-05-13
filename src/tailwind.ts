@@ -23,11 +23,6 @@ export const config = {
             ...theme('spacing'),
             ...negative(theme('spacing')),
         }),
-        minWidth: (theme) => ({
-            0: 0,
-            full: '100%',
-            ...theme('spacing'),
-        }),
         fontSize: {
             xs: ['0.625rem', { lineHeight: '0.875rem' }],
             sm: ['0.75rem', { lineHeight: '1rem' }],
@@ -82,6 +77,12 @@ export const config = {
                 '1/3': '33%',
                 '2/3': '66%',
             },
+            minWidth: (theme) => ({
+                ...theme('spacing'),
+            }),
+            minHeight: (theme) => ({
+                ...theme('spacing'),
+            }),
             spacing: {
                 content: 'max-content',
             },
