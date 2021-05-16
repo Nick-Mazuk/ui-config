@@ -19,9 +19,9 @@ const multiplyMatrices = (
         })
     )
 
-    if (m === 1) product = (product[0] as unknown) as number[][]
+    if (m === 1) product = product[0] as unknown as number[][]
 
-    if (p === 1) return (product.map((x) => x[0]) as unknown) as number[][]
+    if (p === 1) return product.map((x) => x[0]) as unknown as number[][]
 
     return product
 }
