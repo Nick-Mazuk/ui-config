@@ -35,8 +35,8 @@ const LIGHTNESS_MAP: Record<Lightness, Contrast> = {
     },
     500: {
         lightness: 48.323,
-        min: 4.55,
-        max: 4.61,
+        min: 4.5,
+        max: 4.545,
     },
     DEFAULT: {
         lightness: 48.323,
@@ -86,7 +86,7 @@ const getLchFromColorStops = (colorStops: AcColor[], lightness: number): AcColor
         const weight =
             (lightness - colorStops[index].lchab[0]) /
             (colorStops[index + 1].lchab[0] - colorStops[index].lchab[0])
-        return AcColor.blend(colorStops[index], colorStops[index + 1], 'lchab', weight)
+        return AcColor.blend(colorStops[index], colorStops[index + 1], 'lchab', 1 - weight)
     }
     return colorStops[colorStops.length - 1]
 }
@@ -149,9 +149,12 @@ export const colors: Colors = {
     ),
     primary: createPaletteItem(
         [
+            new AcColor({ color: [9.254, 39.054, 288], type: 'lchab' }),
+            new AcColor({ color: [39, 66, 282.521], type: 'lchab' }),
             new AcColor({ color: [48.323, 73.61, 282.521], type: 'lchab' }),
-            new AcColor({ color: [60, 73.61, 282.521], type: 'lchab' }),
-            new AcColor({ color: [179, 213, 248], type: 'rgb' }),
+            new AcColor({ color: [60, 54, 267], type: 'lchab' }),
+            new AcColor({ color: [73, 39, 261], type: 'lchab' }),
+            new AcColor({ color: [83.663, 30, 254.699], type: 'lchab' }),
         ],
         lightnesses
     ),
@@ -163,7 +166,8 @@ export const colors: Colors = {
         [
             new AcColor({ color: [48.323, 66.576, 134.383], type: 'lchab' }),
             new AcColor({ color: [60, 66.576, 134.383], type: 'lchab' }),
-            new AcColor({ color: [92, 40, 134.383], type: 'lchab' }),
+            new AcColor({ color: [74, 48, 134.383], type: 'lchab' }),
+            new AcColor({ color: [92, 31, 134.383], type: 'lchab' }),
         ],
         lightnesses
     ),
