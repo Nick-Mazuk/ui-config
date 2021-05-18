@@ -183,7 +183,7 @@ export const config = {
                             borderLeftWidth: theme('spacing.1'),
                         },
                         img: {
-                            borderRadius: theme('rounded.lg'),
+                            borderRadius: theme('borderRadius.lg'),
                         },
                         h2: {
                             marginTop: '2em',
