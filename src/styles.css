@@ -154,6 +154,9 @@
     scrollbar-width: none; /* Firefox */
 }
 
+.ProseMirror img {
+    @apply ring-0 ring-offset-0 transition;
+}
 .ProseMirror img.ProseMirror-selectednode {
-    @apply ring-2 ring-offset-2 ring-primary
+    @apply ring-2 ring-offset-2 ring-primary;
 }
