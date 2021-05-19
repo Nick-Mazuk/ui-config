@@ -129,7 +129,7 @@
     @apply text-foreground bg-gray-100;
 }
 .prose pre {
-    @apply text-background bg-gray-700 dark:text-foreground dark:bg-gray-200;
+    @apply text-background bg-gray-800 dark:text-foreground dark:bg-gray-200;
 }
 .prose blockquote {
     @apply text-foreground;
