@@ -178,7 +178,7 @@ export const config = {
                             background: 'none',
                         },
                         'li > p': {
-                            margin: '0px',
+                            margin: '0px !important',
                         },
                         blockquote: {
                             fontStyle: '',
