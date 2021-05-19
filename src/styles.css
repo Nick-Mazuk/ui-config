@@ -128,6 +128,9 @@
 .prose pre {
     @apply text-foreground bg-gray-100;
 }
+.prose pre {
+    @apply text-background bg-gray-700 dark:text-foreground dark:bg-gray-200;
+}
 .prose blockquote {
     @apply text-foreground;
 }
@@ -158,5 +161,5 @@
     @apply ring-0 ring-offset-0 transition;
 }
 .ProseMirror img.ProseMirror-selectednode {
-    @apply ring-2 ring-offset-2 ring-primary;
+    @apply ring-2 ring-offset-2 ring-offset-background ring-primary;
 }
