@@ -177,6 +177,9 @@ export const config = {
                             left: '0px',
                             background: 'none',
                         },
+                        'li > p': {
+                            margin: '0px',
+                        },
                         blockquote: {
                             fontStyle: '',
                             paddingLeft: theme('padding.9'),
