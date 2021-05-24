@@ -171,7 +171,7 @@
     @apply contents sm:grid grid-flow-col gap-6;
 }
 
-.form-layout > .form-layout-item:not(:first-of-type) {
+.form-layout > .form-layout-item + .form-layout-item {
     @apply -mt-2;
 }
 
