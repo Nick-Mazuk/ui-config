@@ -168,7 +168,7 @@
 }
 
 .form-layout-horizontal {
-    @apply contents sm:grid grid-flow-cols gap-6;
+    @apply contents sm:grid grid-flow-col gap-6;
 }
 
 .form-layout > .form-layout-item:not(:first-of-type) {
