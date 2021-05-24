@@ -151,7 +151,6 @@
     display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
 .hide-scrollbar {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
@@ -162,4 +161,12 @@
 }
 .ProseMirror img.ProseMirror-selectednode {
     @apply ring-2 ring-offset-2 ring-offset-background ring-primary;
+}
+
+.form-layout {
+    @apply grid grid-cols-1 gap-6;
+}
+
+.form-layout > label {
+    @apply -mt-2 first:mt-0;
 }
