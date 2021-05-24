@@ -167,10 +167,15 @@
     @apply grid grid-cols-1 gap-6;
 }
 
-.form-layout > label:not(:first-of-type) {
+.form-layout-horizontal {
+    @apply contents sm:grid grid-flow-cols gap-6;
+}
+
+.form-layout > .form-layout-item:not(:first-of-type) {
     @apply -mt-2;
 }
 
-.form-layout [data-test='input-feedback'] {
+.form-layout [data-test='input-feedback'],
+.form-layout-horizontal [data-test='input-feedback'] {
     @apply absolute;
 }
