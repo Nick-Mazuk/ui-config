@@ -175,6 +175,10 @@
     @apply -mt-2;
 }
 
+.form-layout-horizontal > .form-layout-item + .form-layout-item {
+    @apply -mt-2 sm:mt-0;
+}
+
 .form-layout [data-test='input-feedback'],
 .form-layout-horizontal [data-test='input-feedback'] {
     @apply absolute;
