@@ -180,7 +180,7 @@ export const colors: Colors = {
         lightnesses
     ),
     gray: createPaletteItem(
-        [new AcColor({ color: [48.323, 0, 282.521], type: 'lchab' })],
+        [new AcColor({ color: [48.323, 1, 282.521], type: 'lchab' })],
         lightnesses
     ),
     accent: {
