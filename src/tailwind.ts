@@ -180,6 +180,12 @@ export const config = {
                         'li > p': {
                             margin: '0px !important',
                         },
+                        'p:first-of-type': {
+                            marginTop: '0',
+                        },
+                        'p:last-of-type': {
+                            marginBottom: '0',
+                        },
                         blockquote: {
                             fontStyle: '',
                             paddingLeft: theme('padding.9'),
