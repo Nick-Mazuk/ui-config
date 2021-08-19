@@ -143,10 +143,16 @@ export const colors: Colors = {
         DEFAULT: [255, 255, 255],
         i: [0, 0, 0],
     },
-    link: createPaletteItem(
-        [new AcColor({ color: [48.323, 73.61, 282.521], type: 'lchab' })],
-        ['DEFAULT']
-    ),
+    link: {
+        DEFAULT: createPaletteItem(
+            [new AcColor({ color: [48.323, 73.61, 282.521], type: 'lchab' })],
+            ['DEFAULT']
+        ).DEFAULT,
+        i: createPaletteItem(
+            [new AcColor({ color: [48.323, 73.61, 282.521], type: 'lchab' })],
+            [300]
+        )[300],
+    },
     primary: createPaletteItem(
         [
             new AcColor({ color: [9.254, 39.054, 288], type: 'lchab' }),
