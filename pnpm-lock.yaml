@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@nick-mazuk/eslint-config': ^0.8.11
   '@nick-mazuk/tsconfig': ^0.1.1
-  '@tailwindcss/aspect-ratio': ^0.2.0
+  '@tailwindcss/aspect-ratio': ^0.4.0
   '@tailwindcss/forms': ^0.3.2
   '@tailwindcss/line-clamp': ^0.2.0
   '@tailwindcss/typography': ^0.4.0
@@ -24,7 +24,7 @@ specifiers:
 devDependencies:
   '@nick-mazuk/eslint-config': 0.8.13_eslint@7.30.0+typescript@4.3.5
   '@nick-mazuk/tsconfig': 0.1.1_typescript@4.3.5
-  '@tailwindcss/aspect-ratio': 0.2.1_tailwindcss@2.2.4
+  '@tailwindcss/aspect-ratio': 0.4.0_tailwindcss@2.2.4
   '@tailwindcss/forms': 0.3.3_tailwindcss@2.2.4
   '@tailwindcss/line-clamp': 0.2.1_tailwindcss@2.2.4
   '@tailwindcss/typography': 0.4.1_tailwindcss@2.2.4
@@ -395,10 +395,10 @@ packages:
       fastq: 1.11.1
     dev: true
 
-  /@tailwindcss/aspect-ratio/0.2.1_tailwindcss@2.2.4:
-    resolution: {integrity: sha512-aDFi80aHQ3JM3symJ5iKU70lm151ugIGFCI0yRZGpyjgQSDS+Fbe93QwypC1tCEllQE8p0S7TUu20ih1b9IKLA==}
+  /@tailwindcss/aspect-ratio/0.4.0_tailwindcss@2.2.4:
+    resolution: {integrity: sha512-WJu0I4PpqNPuutpaA9zDUq2JXR+lorZ7PbLcKNLmb6GL9/HLfC7w3CRsMhJF4BbYd/lkY6CfXOvkYpuGnZfkpQ==}
     peerDependencies:
-      tailwindcss: '>=2.0.0'
+      tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
     dependencies:
       tailwindcss: 2.2.4_autoprefixer@10.2.6
     dev: true
@@ -1647,6 +1647,7 @@ packages:
     resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
+    requiresBuild: true
     dev: true
     optional: true
 
