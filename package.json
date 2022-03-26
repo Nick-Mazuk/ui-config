@@ -1,6 +1,6 @@
 {
     "name": "@nick-mazuk/ui-config",
-    "version": "0.10.64",
+    "version": "0.10.65",
     "description": "> **Note: this package is considered experimental and can change at any time without notice. Updates are not covered by semver until 1.0**",
     "main": "lib/index.js",
     "scripts": {
@@ -19,7 +19,7 @@
         "@nick-mazuk/eslint-config": "^0.8.11",
         "@nick-mazuk/tsconfig": "^0.1.1",
         "@tailwindcss/aspect-ratio": "^0.2.0",
-        "@tailwindcss/forms": "^0.3.2",
+        "@tailwindcss/forms": "^0.5.0",
         "@tailwindcss/line-clamp": "^0.2.0",
         "@tailwindcss/typography": "^0.4.0",
         "@types/flat": "^5.0.1",
