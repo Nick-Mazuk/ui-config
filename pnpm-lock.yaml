@@ -6,7 +6,7 @@ specifiers:
   '@tailwindcss/aspect-ratio': ^0.2.0
   '@tailwindcss/forms': ^0.3.2
   '@tailwindcss/line-clamp': ^0.2.0
-  '@tailwindcss/typography': ^0.4.0
+  '@tailwindcss/typography': ^0.5.0
   '@types/flat': ^5.0.1
   '@types/fs-extra': ^9.0.11
   '@types/node': ^14.14.41
@@ -27,7 +27,7 @@ devDependencies:
   '@tailwindcss/aspect-ratio': 0.2.1_tailwindcss@2.2.4
   '@tailwindcss/forms': 0.3.3_tailwindcss@2.2.4
   '@tailwindcss/line-clamp': 0.2.1_tailwindcss@2.2.4
-  '@tailwindcss/typography': 0.4.1_tailwindcss@2.2.4
+  '@tailwindcss/typography': 0.5.2_tailwindcss@2.2.4
   '@types/flat': 5.0.2
   '@types/fs-extra': 9.0.12
   '@types/node': 14.17.5
@@ -420,15 +420,14 @@ packages:
       tailwindcss: 2.2.4_autoprefixer@10.2.6
     dev: true
 
-  /@tailwindcss/typography/0.4.1_tailwindcss@2.2.4:
-    resolution: {integrity: sha512-ovPPLUhs7zAIJfr0y1dbGlyCuPhpuv/jpBoFgqAc658DWGGrOBWBMpAWLw2KlzbNeVk4YBJMzue1ekvIbdw6XA==}
+  /@tailwindcss/typography/0.5.2_tailwindcss@2.2.4:
+    resolution: {integrity: sha512-coq8DBABRPFcVhVIk6IbKyyHUt7YTEC/C992tatFB+yEx5WGBQrCgsSFjxHUr8AWXphWckadVJbominEduYBqw==}
     peerDependencies:
-      tailwindcss: '>=2.0.0'
+      tailwindcss: '>=3.0.0 || >= 3.0.0-alpha.1 || insiders'
     dependencies:
       lodash.castarray: 4.4.0
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
-      lodash.uniq: 4.5.0
       tailwindcss: 2.2.4_autoprefixer@10.2.6
     dev: true
 
@@ -1647,6 +1646,7 @@ packages:
     resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -2061,10 +2061,6 @@ packages:
 
   /lodash.truncate/4.4.2:
     resolution: {integrity: sha1-WjUNoLERO4N+z//VgSy+WNbq4ZM=}
-    dev: true
-
-  /lodash.uniq/4.5.0:
-    resolution: {integrity: sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=}
     dev: true
 
   /lodash/4.17.21:
